@@ -67,7 +67,7 @@ configure :build do
   ignore   File.join(config[:js_dir], '*') # handled by webpack
   set      :relative_links, true
   activate :asset_hash
-  # Place your favicon in the images dir and specify it in data/site.yml
+  # Place the icon (png or svg) in your images dir and specify it in data/site.yml
   activate :favicon_maker, :icons => Favicon.generate(@app.config.images_dir, @app.data.site.favicon)
   activate :minify_css
   activate :minify_html
