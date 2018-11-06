@@ -68,7 +68,7 @@ configure :build do
   set      :relative_links, true
   activate :asset_hash
   # Place the icon (png or svg) in your images dir and specify it in data/site.yml
-  activate :favicon_maker, :icons => Favicon.generate(@app.config.images_dir, @app.data.site.favicon)
+  activate :favicon_maker, icons: Favicon.generate(@app.config.images_dir, @app.data.site.favicon)
   activate :minify_css
   activate :minify_html
   activate :minify_javascript
