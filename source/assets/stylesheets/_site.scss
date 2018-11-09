@@ -14,27 +14,16 @@ a {
   text-decoration: none;
   transition: all 0.1s linear;
 }
+pre {
+  padding: 2em;
+  background: rgba($gray-light, 0.25);
+  border: $gray-light;
+  border-radius: 3px;
+}
 code {
   font-family: "Consolas", "monaco", monospace;
   font-size: 1em;
 }
 .text-center {
   text-align: center;
-}
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  max-width: 64rem;
-  display: flex;
-}
-.col {
-  width: 25%;
-  height: auto;
-  margin: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }

@@ -5,6 +5,9 @@
 @import "settings/fonts";
 @import "settings/variables";
 
+// Vendors
+@import "bootstrap/scss/bootstrap-grid";
+
 // Style
 @import "site";
 @import "components/navbar";
