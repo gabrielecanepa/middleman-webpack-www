@@ -1,0 +1,77 @@
+.hero {
+  background: $yellow;
+  text-align: center;
+  .wrap-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.6em;
+  }
+  .hero-logo {
+    height: 14.375em;
+    width: 14.375em;
+  }
+  .hero-headline {
+    color: white;
+    font-size: 2.2em;
+    font-weight: 600;
+    margin: 0 0 0.5em;
+  }
+  .hero-description {
+    color: rgba($black, 0.6);
+    font-size: 1.1em;
+    display: inline-block;
+    line-height: 1.4;
+    margin: 0 0 2.5em;
+    width: 55%;
+    font-weight: normal;
+  }
+  .browser {
+    position: relative;
+    margin: 0 auto;
+    text-align: left;
+    &:before {
+      height: 1.6875em;
+      width: 100%;
+      background: $gray-light url("https://middlemanapp.com/images/browser-bar-button-set.svg") no-repeat 0.5em 0.5em;
+      border-radius: 3px 3px 0 0;
+      content: "";
+      display: block;
+    }
+  }
+  .browser-body {
+    margin: 0;
+    padding: 1em;
+    background-color: $gray;
+    font-weight: 700;
+  }
+  .browser-code {
+    background: $gray;
+    margin: 0;
+    padding: 2em 0 3em 0;
+    display: block;
+    color: white;
+    .variable {
+      color: #D58900;
+    }
+  }
+  .version-number {
+    position: absolute;
+    bottom: 0.75em;
+    right: 1em;
+    color: white;
+    font-size: 0.9em;
+    font-weight: 500;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .hero {
+    .hero-description {
+      font-size: 1.35em;
+    }
+    .browser {
+      width: 66.6%;
+    }
+  }
+}

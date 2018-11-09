@@ -1,18 +1,3 @@
-<%= svg_tag "logo.svg", class: "middleman-logo" %>
+<%= partial "components/hero", locals: { content: "home" } %>
 
-<h1>Middleman is Running</h1>
-
-<%= link_to(
-  "About this template",
-  "https://github.com/gabrielecanepa/middleman-template#readme",
-  target: "_blank"
-) %>
-
-<br><br>
-
-<%= link_to(
-  "Read Middleman documentation",
-  "https://middlemanapp.com/basics/templating_language/",
-  target: "_blank"
-) %>
-
+<%= partial "components/section_tools" %>
