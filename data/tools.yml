@@ -1,0 +1,23 @@
+Sass:
+  website: http://sass-lang.com
+  description: Sass is a CSS preprocessor, which adds special features such as variables, nested rules and mixins into regular CSS. The aim is to make the coding process simpler and more efficient.
+
+yarn:
+  website: https://yarnpkg.com/lang/en
+  description: Yarn is a package manager for your code. It allows you to use and share code with other developers from around the world. Yarn does this quickly, securely, and reliably.
+
+webpack:
+  website: https://webpack.js.org
+  description: webpack is a module bundler - its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.
+
+Babel:
+  website: https://babeljs.io
+  description: Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments.
+
+ESLint:
+  website: https://eslint.org
+  description: ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
+
+RuboCop:
+  website: https://github.com/rubocop-hq/rubocop
+  description: RuboCop is a Ruby static code analyzer and code formatter, extremely flexible and most aspects of its behavior can be tweaked via various configuration options.
