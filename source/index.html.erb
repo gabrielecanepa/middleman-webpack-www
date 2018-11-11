@@ -1,7 +1,5 @@
 <% set_meta_tags title: "#{data.site.site}: #{data.site.description}",
-                 full_title: false
-%>
+                 full_title: false %>
 
-<%= partial "components/hero", locals: { content: "home" } %>
-
-<%= partial "components/section_tools" %>
+<%= partial "components/hero",          locals: { content: "home" } %>
+<%= partial "components/section_tools", locals: { content: "home" } %>

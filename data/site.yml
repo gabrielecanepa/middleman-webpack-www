@@ -1,6 +1,7 @@
 site: "Middleman webpack"
 description: "🏗 Scalable ready-to-use Middleman 4 template"
 host: "http://gabrielecanepa.github.io/middleman-webpack"
+repository: "https://github.com/gabrielecanepa/middleman-webpack"
 keywords: "middleman, template, sass, yarn, webpack, babel, eslint, favicon, meta tags"
 thumbnail: "banner.png"
 favicon: "_favicon.svg"

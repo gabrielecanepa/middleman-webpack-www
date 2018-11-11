@@ -1,0 +1,33 @@
+pre {
+  border-radius: 3px;
+  background-color: $white-dark !important;
+  line-height: 1.2 !important;
+  &:before, &:after { box-shadow: none !important; }
+}
+pre code {
+  border-left: none !important;
+  box-shadow: none !important;
+  background-color: $white-dark !important;
+  background-image: none !important;
+  padding: 0 !important;
+}
+code {
+  font-family: "Consolas", "monaco", monospace;
+  font-size: 1em;
+}
+:not(pre) > code[class*="language-"]:focus { outline: none; };
+div.code-toolbar > .toolbar {
+  top: .8em !important;
+  right: .7em !important;
+}
+div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-toolbar > .toolbar span {
+  color: $gray !important;
+  font-size: .8em !important;
+  padding: 1em !important;
+  background: $white !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: none !important;
+  border-radius: 1px !important;
+  font-weight: 600 !important;
+  &:focus { outline: none; }
+}

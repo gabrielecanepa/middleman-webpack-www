@@ -6,12 +6,18 @@
 @import "settings/variables";
 
 // Vendors
+@import "settings/icomoon";
 @import "bootstrap/scss/bootstrap-grid";
 
 // Style
 @import "site";
-@import "components/navbar";
+@import "components/buttons";
+@import "components/code";
+@import "components/footer";
 @import "components/hero";
 @import "components/language-card";
+@import "components/navbar";
+@import "components/section-tools";
+@import "components/tooltip";
 @import "pages/about";
 

@@ -1,4 +1,4 @@
-<% link_to data.tools[tool].website, class: "language-card", "data-tippy": data.tools[tool].description do %>
+<% link_to data.tools[tool].website, target: "_blank", class: "language-card", "data-tippy": data.tools[tool].description, "data-tippy-distance": "20" do %>
   <%= image_tag "#{tool.downcase}.svg", class: "language-logo" %>
-  <h3><code><%= tool %></code></h3>
+  <h3><code class="language-*"><%= tool %></code></h3>
 <% end %>

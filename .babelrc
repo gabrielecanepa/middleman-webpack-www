@@ -1,9 +1,9 @@
 { "presets": [ "es2015" ],
   "plugins": [
     ["prismjs", {
-        "languages": ["css", "erb", "git", "javascript", "yaml"],
-        "plugins": ["line-numbers"],
-        "theme": "default",
+        "languages": ["css", "erb", "git", "javascript", "json", "ruby", "yaml"],
+        "plugins": ["copy-to-clipboard", "toolbar"],
+        "theme": "coy",
         "css": true
     }]
   ]

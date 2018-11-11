@@ -1,5 +1,6 @@
 ---
 title: About
+layout: docs
 ---
 
 <main class="about">
@@ -7,16 +8,30 @@ title: About
     <h1>Installation</h1>
     <p>This is a part of the documentation</p>
     <hr>
-    <pre><code class="language-ruby">
+    <pre data-label="show-ruby">
+      <code class="language-ruby">
       number = 0
       numbers.each do |number|
         puts number
       end
-    </code></pre>
+      </code>
+    </pre>
+
+    <pre data-label="show-javascript">
+      <code class="language-javascript">
+      import "./components/prism";
+      import "./components/tippy";
+      import browserType from "./components/typed";
+      </code>
+    </pre>
+
+    <% ["CSS", "ERB", "Ruby", "JavaScript", "JSON", "YAML"].each do |language| %>
+      <template id="show-<%= language.downcase %>">
+        <button>
+          <%= language %> <i class="icomoon-<%= language.downcase %>"></i>
+        </button>
+      </template>
+    <% end %>
   </div>
 </main>
-
-<pre><code class="language-css">p { color: red }</code></pre>
-
-
 

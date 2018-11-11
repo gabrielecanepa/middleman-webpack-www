@@ -1,0 +1,16 @@
+.btn {
+  display: inline-block;
+  padding: 1em 1.5em;
+  border-radius: 3px;
+  font-weight: 700;
+  text-align: center;
+  transition: all 150ms;
+}
+.btn-yellow {
+  background-color: $yellow;
+  color: $black;
+}
+.btn-black {
+  background-color: $black;
+  color: white;
+}

@@ -1,0 +1,10 @@
+.tippy-content {
+  font-size: 1.1em;
+  padding: 0.6em;
+}
+
+@media screen and (max-width: 1024px) {
+  @for $i from 7 through 19 {
+    #tippy-#{$i} { display: none; }
+  }
+}
