@@ -17,5 +17,6 @@ gem 'middleman-robots'
 group :development do
   gem 'oga'
   gem 'rake'
+  gem 'redcarpet'
   gem 'rubocop'
 end

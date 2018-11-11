@@ -19,11 +19,10 @@
   }
   .hero-description {
     color: rgba($black, 0.6);
-    font-size: 1.1em;
+    font-size: 1.35em;
     display: inline-block;
     line-height: 1.4;
     margin: 0 0 2.5em;
-    width: 55%;
     font-weight: normal;
   }
   .browser {
@@ -51,9 +50,7 @@
     padding: 2em 0 3em 0;
     display: block;
     color: white;
-    .variable {
-      color: #D58900;
-    }
+    .variable { color: #D58900; }
   }
   .version-number {
     position: absolute;
@@ -65,13 +62,4 @@
   }
 }
 
-@media screen and (min-width: 40em) {
-  .hero {
-    .hero-description {
-      font-size: 1.35em;
-    }
-    .browser {
-      width: 66.6%;
-    }
-  }
-}
+@include media-breakpoint-up(md) { .hero .browser { width: 66.6%; } }

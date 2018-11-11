@@ -3,7 +3,7 @@
   padding: 0.6em;
 }
 
-@media screen and (max-width: 1024px) {
+@include media-breakpoint-down(md) {
   @for $i from 7 through 19 {
     #tippy-#{$i} { display: none; }
   }
