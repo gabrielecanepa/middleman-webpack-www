@@ -1,4 +1,5 @@
-{ "presets": [ "es2015" ],
+{
+  "presets": ["@babel/preset-env"],
   "plugins": [
     ["prismjs", {
         "languages": ["css", "erb", "git", "javascript", "json", "ruby", "yaml"],

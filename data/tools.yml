@@ -1,10 +1,10 @@
 Sass:
   website: http://sass-lang.com
-  description: <strong>Sass</strong> is a <em>CSS preprocessor</em>, which adds special features such as variables, nested rules and mixins into regular CSS.
+  description: <strong>Sass</strong> is a <em>CSS preprocessor</em> which adds special features such as variables, nested rules and mixins into regular CSS.
 
 yarn:
   website: https://yarnpkg.com/lang/en
-  description: <strong>Yarn</strong> is a <em>package manager for your code</em>, allowing you to use and share code with other developers from around the world.
+  description: <strong>Yarn</strong> is a <em>package manager for your code</em> allowing you to use and share code with other developers from around the world.
 
 webpack:
   website: https://webpack.js.org
@@ -16,11 +16,11 @@ Babel:
 
 ESLint:
   website: https://eslint.org
-  description: <strong>ESLint</strong> is a <em>powerful ECMAScript/JavaScript linter</em> for identifying patterns found in your code and help making it more consistent.
+  description: <strong>ESLint</strong> is a <em>powerful ECMAScript/JavaScript linter</em> to identify wrong patterns in your code and help making it more consistent.
 
 RuboCop:
   website: https://github.com/rubocop-hq/rubocop
-  description: <strong>RuboCop</strong> is a <em>Ruby code analyzer and formatter</em>, extremely flexible and with various configuration options available.
+  description: <strong>RuboCop</strong> is a <em>Ruby code analyzer and formatter</em>, extremely flexible and with tons of configuration options available.
 
 middleman-autoprefixer:
   website: https://github.com/middleman/middleman-autoprefixer
@@ -28,7 +28,7 @@ middleman-autoprefixer:
 
 middleman-deploy:
   website: https://github.com/karlfreeman/middleman-deploy
-  description: <strong>Let you deploy</strong> your built site over rsync, FTP, STFP, or git.
+  description: <strong>Deploy your built website</strong> over rsync, FTP, STFP, or git.
 
 middleman-dotenv:
   website: https://github.com/karlfreeman/middleman-dotenv
@@ -44,7 +44,7 @@ middleman-google-analytics:
 
 middleman-livereload:
   website: https://github.com/middleman/middleman-livereload
-  description: <strong>Add livereloading functionality</strong> to your development, compatible with webpack.
+  description: <strong>Add livereloading functionality</strong> to your development, including your webpack bundles.
 
 middleman-meta-tags:
   website: https://github.com/gabrielecanepa/middleman-meta-tags
@@ -64,12 +64,12 @@ middleman-pry:
 
 middleman-robots:
   website: https://github.com/yterajima/middleman-robots
-  description: <strong>Create <code>robots.txt</code></strong> directly from <code>config.rb</code>.
+  description: <strong>Create <code>robots.txt</code></strong> with a simple configuration.
 
 Rake:
   website: https://github.com/ruby/rake
-  description: <strong>Write tasks</strong> and import dependencies with standard Ruby syntax.
+  description: <strong>Write tasks and automatize your development</strong> with standard Ruby syntax.
 
 SVG and favicon helpers:
   website: /about.html#helpers
-  description: <strong>Use inlined SVGs</strong> and easily integrate your favicon.
+  description: <strong>Use inlined SVGs</strong> and easily generate link and meta tags.
