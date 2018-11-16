@@ -1,6 +1,6 @@
 <header class="hero" role="banner">
   <section class="wrap-container">
-    <%= svg_tag "logo.svg", alt: "Middleman webpack", class: "hero-logo" %>
+    <%= svg_tag "logo.svg", class: "hero-logo" %>
 
     <h2 class="hero-headline">
       <% if content == "home" %>
@@ -25,7 +25,7 @@
           <span class="content"></span>
         </code>
       </div>
-      <%= link_to "Current version: 0.0.1", "https://github.com/gabrielecanepa/middleman-webpack", class: "version-number", target: "_blank" %>
+      <%= link_to "Current version: #{data.site.version}", "https://github.com/gabrielecanepa/middleman-webpack", class: "version-number", target: "_blank" %>
     </div>
   </section>
 </header>

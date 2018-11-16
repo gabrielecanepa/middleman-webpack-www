@@ -3,10 +3,9 @@
 // Settings
 @import "settings/colors";
 @import "settings/fonts";
-@import "settings/variables";
 
 // Vendors
-@import "settings/icomoon";
+@import "vendors-settings/icomoon";
 @import "bootstrap/scss/mixins/breakpoints";
 @import "bootstrap/scss/bootstrap-grid";
 
@@ -14,36 +13,11 @@
 @import "site";
 @import "components/buttons";
 @import "components/code";
-@import "components/footer";
 @import "components/hero";
 @import "components/language-card";
-@import "components/navbar";
 @import "components/section-tools";
 @import "components/tooltip";
+@import "layouts/footer";
+@import "layouts/navbar";
 @import "pages/about";
-
-// // Settings
-// @import "settings/colors";
-// @import "settings/fonts";
-// @import "settings/variables";
-
-// // Vendors
-// // @import "vendor-settings/bootstrap";
-// // @import "bootstrap/scss/bootstrap";
-
-// // Styling
-// // 1. site
-// @import "site";
-
-// // 2. components/
-// // @import "components/card";
-// // @import "components/lists";
-
-// // 3. layout/
-// // @import "layouts/navbar";
-// // @import "layouts/footer";
-
-// // 4. pages/
-// // @import "pages/home";
-// // @import "pages/404";
 

@@ -1,50 +1,50 @@
 Sass:
-  website: http://sass-lang.com
-  description: <strong>Sass</strong> is a <em>CSS preprocessor</em> which adds special features such as variables, nested rules and mixins into regular CSS.
+  website: https://sass-lang.com
+  description: <strong>Sass</strong> is a <em>CSS preprocessor</em> which adds special features such as variables, nested rules and mixins into regular CSS
 
 yarn:
-  website: https://yarnpkg.com/lang/en
-  description: <strong>Yarn</strong> is a <em>package manager for your code</em> allowing you to use and share code with other developers from around the world.
+  website: https://yarnpkg.com
+  description: <strong>Yarn</strong> is a <em>package manager for your code</em> allowing you to use and share code with other developers from around the world
 
 webpack:
   website: https://webpack.js.org
-  description: <strong>webpack</strong> is a <em>module bundler</em> capable of transforming, bundling, or packaging just about any resource or asset.
+  description: <strong>webpack</strong> is a <em>module bundler</em> capable of transforming, bundling, or packaging just about any resource or asset
 
 Babel:
   website: https://babeljs.io
-  description: <strong>Babel</strong> is a <em>ECMAScript 2015+ code translator</em> able to convert your code into a compatible version for current and older browsers or environments.
+  description: <strong>Babel</strong> is a <em>ES6+ translator</em> able to convert your code into a compatible version for different browsers or environments
 
 ESLint:
   website: https://eslint.org
-  description: <strong>ESLint</strong> is a <em>powerful ECMAScript/JavaScript linter</em> to identify wrong patterns in your code and help making it more consistent.
+  description: <strong>ESLint</strong> is a <em>ECMAScript/JavaScript linter</em> to identify wrong patterns in your code and help make it more consistent
 
 RuboCop:
   website: https://github.com/rubocop-hq/rubocop
-  description: <strong>RuboCop</strong> is a <em>Ruby code analyzer and formatter</em>, extremely flexible and with tons of configuration options available.
+  description: <strong>RuboCop</strong> is a <em>Ruby code analyzer and formatter</em>, extremely flexible and with tons of configuration options available
 
 middleman-autoprefixer:
   website: https://github.com/middleman/middleman-autoprefixer
-  description: <strong>Automatically vendor-prefix stylesheets</strong>, served by Middleman.
+  description: <strong>Automatically vendor-prefix stylesheets</strong>, served by Middleman
 
 middleman-deploy:
   website: https://github.com/karlfreeman/middleman-deploy
-  description: <strong>Deploy your built website</strong> over rsync, FTP, STFP, or git.
+  description: <strong>Deploy your built website</strong> over rsync, FTP, STFP, or git
 
 middleman-dotenv:
   website: https://github.com/karlfreeman/middleman-dotenv
-  description: <strong>Integrate dotenv</strong>, a Ruby gem to load environment variables from <code>.env</code>
+  description: <strong>Integrate <code>dotenv</code></strong>, a Ruby gem to load environment variables from <code>.env</code>
 
 middleman-favicon-maker:
   website: https://github.com/follmann/middleman-favicon-maker
-  description: <strong>Generate favicon files</strong> in various sizes from a base image.
+  description: <strong>Generate favicon icons</strong> in various sizes from a base image
 
-middleman-google-analytics:
-  website: https://github.com/danielbayerlein/middleman-google-analytics
-  description: <strong>Handle your Google Analytics</strong> by easily generating tracking code.
+# middleman-google-analytics:
+#   website: https://github.com/danielbayerlein/middleman-google-analytics
+#   description: <strong>Handle your Google Analytics</strong> by easily generating tracking code
 
 middleman-livereload:
   website: https://github.com/middleman/middleman-livereload
-  description: <strong>Add livereloading functionality</strong> to your development, including your webpack bundles.
+  description: <strong>Add livereloading functionality</strong> to your development, including your bundles
 
 middleman-meta-tags:
   website: https://github.com/gabrielecanepa/middleman-meta-tags
@@ -52,24 +52,35 @@ middleman-meta-tags:
 
 middleman-minify-html:
   website: https://github.com/middleman/middleman-minify-html
-  description: <strong>Minify whitespace around HTML</strong> via HtmlCompressor.
+  description: <strong>Minify whitespace around HTML</strong> via HtmlCompressor
 
-middleman-protect-emails:
-  website: https://github.com/amsardesai/middleman-protect-emails
-  description: <strong>Encrypt email links</strong> on your page, avoiding spam bots.
+# middleman-protect-emails:
+#   website: https://github.com/amsardesai/middleman-protect-emails
+#   description: <strong>Encrypt email links</strong> on your page, avoiding spam bots
 
 middleman-pry:
   website: https://github.com/AndrewKvalheim/middleman-pry
-  description: <strong>Use Pry as default console</strong> instead of Middleman's built-in.
+  description: <strong>Use Pry as default console</strong> instead of Middleman's built-in
 
 middleman-robots:
   website: https://github.com/yterajima/middleman-robots
-  description: <strong>Create <code>robots.txt</code></strong> with a simple configuration.
+  description: <strong>Create <code>robots.txt</code></strong> with a simple configuration
 
-Rake:
+pry-byebug:
+  website: https://github.com/deivid-rodriguez/pry-byebug
+  description: <strong>Add step-by-step debugging and navigation</strong> to your Pry console
+
+rake:
   website: https://github.com/ruby/rake
-  description: <strong>Write tasks and automatize your development</strong> with standard Ruby syntax.
+  description: <strong>Automatize your testing</strong> with standard Ruby syntax
 
-SVG and favicon helpers:
+stylelint:
+  website: https://stylelint.io
+  description: <strong>Avoid errors in your styles</strong> with this mighty, modern linter
+
+Inline SVGs:
+  website:
+
+Favicon helper:
   website: /about.html#helpers
-  description: <strong>Use inlined SVGs</strong> and easily generate link and meta tags.
+  description: <strong>Display your favicon in every environment</strong> with a simple line of code

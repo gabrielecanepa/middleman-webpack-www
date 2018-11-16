@@ -2,9 +2,8 @@
   "presets": ["@babel/preset-env"],
   "plugins": [
     ["prismjs", {
-        "languages": ["css", "erb", "git", "javascript", "json", "ruby", "yaml"],
-        "plugins": ["copy-to-clipboard", "toolbar"],
-        "theme": "coy",
+        "languages": ["bash", "css", "erb", "git", "javascript", "json", "ruby", "yaml"],
+        "plugins": ["command-line", "copy-to-clipboard", "toolbar"],
         "css": true
     }]
   ]

@@ -1,5 +1,41 @@
 .about {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  p { font-size: 1.1em; }
+  h1, h2, h3, h4, p {
+    line-height: 1.5;
+  }
+  h1, h2 {
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid $gray-light;
+  }
+  h2 {
+    border-width: 1px;
+  }
+  h3 {
+    font-size: 1.3em;
+  }
+  p  {
+    font-size: 1.1em;
+  }
+  a {
+    color: $blue;
+    font-weight: 500;
+  }
+  small {
+    font-size: 0.5em;
+    a { color: $black; }
+  }
+  a:hover { text-decoration: underline; }
+  ul {
+    font-size: 1.1em;
+  }
+  .banner {
+    width: 100%;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .about {
+    padding: 0.5rem 1rem;
+  }
 }

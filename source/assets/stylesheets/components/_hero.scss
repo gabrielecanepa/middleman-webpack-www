@@ -29,7 +29,7 @@
     position: relative;
     margin: 0 auto;
     text-align: left;
-    &:before {
+    &::before {
       height: 1.6875em;
       width: 100%;
       background: $gray-light url("https://middlemanapp.com/images/browser-bar-button-set.svg") no-repeat 0.5em 0.5em;
@@ -41,16 +41,16 @@
   .browser-body {
     margin: 0;
     padding: 1em;
-    background-color: $gray;
+    background-color: $gray-dark;
     font-weight: 700;
   }
   .browser-code {
-    background: $gray;
+    background: $gray-dark;
     margin: 0;
     padding: 2em 0 3em 0;
     display: block;
     color: white;
-    .variable { color: #D58900; }
+    .variable { color: $gold; }
   }
   .version-number {
     position: absolute;
