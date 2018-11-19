@@ -3,7 +3,7 @@
   "plugins": [
     ["prismjs", {
         "languages": ["bash", "css", "erb", "git", "javascript", "json", "ruby", "yaml"],
-        "plugins": ["command-line", "copy-to-clipboard", "toolbar"],
+        "plugins": ["copy-to-clipboard", "toolbar"],
         "css": true
     }]
   ]

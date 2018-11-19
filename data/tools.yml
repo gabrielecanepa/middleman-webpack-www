@@ -4,19 +4,19 @@ Sass:
 
 yarn:
   website: https://yarnpkg.com
-  description: <strong>Yarn</strong> is a <em>package manager for your code</em> allowing you to use and share code with other developers from around the world
+  description: <strong>Yarn</strong> is a <em>package manager for your code</em> allowing you to use and share packages with other developers from around the world
 
 webpack:
   website: https://webpack.js.org
-  description: <strong>webpack</strong> is a <em>module bundler</em> capable of transforming, bundling, or packaging just about any resource or asset
+  description: <strong>webpack</strong> is a <em>module bundler</em> capable of transforming, bundling, or packaging just about any resource or asset of your application
 
 Babel:
   website: https://babeljs.io
-  description: <strong>Babel</strong> is a <em>ES6+ translator</em> able to convert your code into a compatible version for different browsers or environments
+  description: <strong>Babel</strong> is a <em>ES6+ translator</em> able to convert your code into a compatible version for different browsers and environments
 
 ESLint:
   website: https://eslint.org
-  description: <strong>ESLint</strong> is a <em>ECMAScript/JavaScript linter</em> to identify wrong patterns in your code and help make it more consistent
+  description: <strong>ESLint</strong> is an <em>ECMAScript/JavaScript linter</em> to identify wrong patterns in your code and help make it more consistent
 
 RuboCop:
   website: https://github.com/rubocop-hq/rubocop
@@ -38,9 +38,9 @@ middleman-favicon-maker:
   website: https://github.com/follmann/middleman-favicon-maker
   description: <strong>Generate favicon icons</strong> in various sizes from a base image
 
-# middleman-google-analytics:
-#   website: https://github.com/danielbayerlein/middleman-google-analytics
-#   description: <strong>Handle your Google Analytics</strong> by easily generating tracking code
+middleman-imageoptim:
+  website: https://github.com/gabrielecanepa/middleman-imageoptim
+  description: <strong>Optimize your images</strong> during <code>middleman build</code> by using multiple utilities
 
 middleman-livereload:
   website: https://github.com/middleman/middleman-livereload
@@ -54,32 +54,29 @@ middleman-minify-html:
   website: https://github.com/middleman/middleman-minify-html
   description: <strong>Minify whitespace around HTML</strong> via HtmlCompressor
 
-# middleman-protect-emails:
-#   website: https://github.com/amsardesai/middleman-protect-emails
-#   description: <strong>Encrypt email links</strong> on your page, avoiding spam bots
-
 middleman-pry:
   website: https://github.com/AndrewKvalheim/middleman-pry
   description: <strong>Use Pry as default console</strong> instead of Middleman's built-in
 
 middleman-robots:
   website: https://github.com/yterajima/middleman-robots
-  description: <strong>Create <code>robots.txt</code></strong> with a simple configuration
+  description: <strong>Create your <code>robots.txt</code></strong> with a simple Ruby configuration
 
 pry-byebug:
   website: https://github.com/deivid-rodriguez/pry-byebug
-  description: <strong>Add step-by-step debugging and navigation</strong> to your Pry console
+  description: <strong>Add step-by-step debugging</strong> and navigation to your Pry console
 
 rake:
   website: https://github.com/ruby/rake
-  description: <strong>Automatize your testing</strong> with standard Ruby syntax
+  description: <strong>Automatize your tests and write tasks</strong> with standard Ruby syntax
 
 stylelint:
   website: https://stylelint.io
   description: <strong>Avoid errors in your styles</strong> with this mighty, modern linter
 
 Inline SVGs:
-  website:
+  website: /about.html#inline-svgs
+  description: <strong>Embed SVG icons in your views</strong> and manipulate them with SCSS and JavaScript
 
 Favicon helper:
   website: /about.html#helpers

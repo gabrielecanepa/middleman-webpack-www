@@ -26,6 +26,16 @@ code[class*="language"] {
   display: block;
   overflow: auto;
 }
+code.language-bash {
+  display: inline-block;
+  &::before {
+    content: "$";
+    position: absolute;
+    top: 1.3em;
+    left: 0;
+    color: $gray;
+  }
+}
 :not(pre) > code[class*="language-"] {
   position: relative;
   padding: .2em;
@@ -106,6 +116,7 @@ code[class*="language"] {
 .token.lf::before {
   color: $white-dark;
 }
+// Override default button style
 .code-toolbar .toolbar {
   top: .8em !important;
   right: .7em !important;
@@ -120,5 +131,8 @@ code[class*="language"] {
     border-radius: 1px !important;
     font-weight: 600 !important;
     &:focus { outline: none; }
+  }
+  .toolbar-item:first-child button {
+    border-right-width: 0 !important;
   }
 }

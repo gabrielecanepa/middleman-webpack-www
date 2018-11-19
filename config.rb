@@ -13,8 +13,8 @@ set :js_dir,     'assets/javascripts'
 
 # Activate and configure extensions
 
-activate :autoprefixer do |prefix|
-  prefix.browsers = 'last 2 versions'
+activate :autoprefixer do |config|
+  config.browsers = 'last 2 versions'
 end
 
 activate :external_pipeline,
@@ -54,6 +54,7 @@ configure :build do
   ignore   File.join(config[:js_dir], '*')
   set      :relative_links, true
   activate :asset_hash
+  # Place your base icon in the image dir and specify the file in site.yml
   activate :favicon_maker, icons: generate_favicon_hash
   activate :gzip
   activate :imageoptim, manifest: false, pngout: false, svgo: false
