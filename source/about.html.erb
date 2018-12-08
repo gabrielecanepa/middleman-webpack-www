@@ -5,32 +5,6 @@ layout: docs
 
 <main class="about">
   <div class="container">
-    <h1>Middleman webpack <small><%= link_to data.site.version, data.site.repository, target: "_blank" %></small></h1>
-
-    <p>
-      <strong>Middleman webpack</strong> is a template for <%= link_to "Middleman 4", "https://middlemanapp.com", target: "_blank" %>.
-    </p>
-
-    <pre class="command-line" data-label="show-bash">
-      <code class="language-bash">
-        middleman init [repo_name] -T gabrielecanepa/middleman-webpack
-      </code>
-    </pre>
-
-    <pre data-label="show-javascript">
-      <code class="language-javascript">
-        import "./components/prism";
-        import "./components/tippy";
-        import browserType from "./components/typed";
-      </code>
-    </pre>
-
-    <% ["bash", "CSS", "ERB", "Ruby", "JavaScript", "JSON", "YAML"].each do |language| %>
-      <template id="show-<%= language.downcase %>">
-        <button>
-          <%= language %> <i class="icomoon-<%= language.downcase %>"></i>
-        </button>
-      </template>
-    <% end %>
+    <%= partial "docs" %>
   </div>
 </main>
