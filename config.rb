@@ -11,7 +11,35 @@ set :fonts_dir,  'assets/fonts'
 set :images_dir, 'assets/images'
 set :js_dir,     'assets/javascripts'
 
-# Activate and configure extensions
+set :favicons, [
+  {
+    rel: 'apple-touch-icon',
+    size: '180x180',
+    icon: 'apple-touch-icon.png'
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    size: '32x32',
+    icon: 'favicon32x32.png'
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    size: '16x16',
+    icon: 'favicon16x16.png'
+  },
+  {
+    rel: 'shortcut icon',
+    size: '64x64,32x32,24x24,16x16',
+    icon: 'favicon.ico'
+  }
+]
+
+set :markdown_engine, :redcarpet
+set :markdown,        fenced_code_blocks: true
+
+# Extensions
 
 activate :autoprefixer do |config|
   config.browsers = 'last 2 versions'
@@ -25,24 +53,13 @@ activate :external_pipeline,
 
 activate :dotenv
 activate :meta_tags
+activate :syntax, css_class: "highlight-syntax"
 
 page '/*.xml',  layout: false
 page '/*.json', layout: false
 page '/*.txt',  layout: false
 
-# With alternative layout
-# page '/path/to/file.html', layout: 'other_layout'
-
-# Proxy pages
-# https://middlemanapp.com/advanced/dynamic-pages
-
-# proxy(
-#   '/this-page-has-no-template.html',
-#   '/template-file.html',
-#   locals: {
-#     which_fake_page: 'Rendering a fake page with a local variable'
-#   }
-# )
+# Environments config
 
 configure :development do
   set      :debug_assets, true
@@ -52,9 +69,9 @@ end
 
 configure :build do
   ignore   File.join(config[:js_dir], '*')
+  set      :asset_host, @app.data.site.host
   set      :relative_links, true
   activate :asset_hash
-  # Place your base icon in the image dir and specify the file in site.yml
   activate :favicon_maker, icons: generate_favicon_hash
   activate :gzip
   activate :imageoptim, manifest: false, pngout: false, svgo: false
