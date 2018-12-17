@@ -8,4 +8,7 @@ a {
   transition: all 0.1s linear;
   &:focus { outline: none; }
 }
-*::selection { background: rgba($yellow, 0.4); }
+*::selection {
+  background: $yellow;
+  color: white;
+}
