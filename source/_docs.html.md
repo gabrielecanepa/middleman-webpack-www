@@ -1,52 +1,296 @@
 # Middleman webpack
 
-This is a template for [Middleman 4](https://middlemanapp.com).
+This is a template for [**Middleman 4**](https://middlemanapp.com).
 
-It integrates some of the best modern development tools and snippets to easily create advanced static websites.
+It integrates some of the best modern tools and snippets to create advanced static websites.
 
-It is mainly based on **Yarn**, a reliable and easy to use package manager, **webpack** with **Babel**, ..., and **Sass**, .... All combined with the simplicity of **Ruby** and its gems, some reinvented powerful snippets, and the best debuggers and style linters.
+It's mainly based on [**Yarn**](https://yarnpkg.com), a reliable and easy to use package manager, [**webpack**](https://webpack.js.org), a module bundler capable of packaging almost any kind of asset, and [**Sass**](https://sass-lang.com), the most powerful CSS extension language.
 
-## Table of contents
-
-{{TOC}}
+All this combined with the simplicity of _Ruby and its gems_, some reinvented _powerful snippets_, and the _best available linters and debuggers_.
 
 ## What's included?
 
-### Core
+#### Core
 
-- [Middleman](https://middlemanapp.com)
-- [Yarn](https://yarnpkg.com)
-- [webpack](https://webpackjs.com)
-- [Babel](https://babeljs.org)
-- [ESLint](https://eslint.org)
-- [Sass]
+-   [Middleman](https://middlemanapp.com)
+-   [Yarn](https://yarnpkg.com)
+-   [webpack](https://webpack.js.org) with [Babel](https://babeljs.org)
+-   [Sass](https://sass-lang.com)
 
-### Snippets
+#### Middleman extensions
 
-### Tools
+-   [Autoprefixer](https://github.com/middleman/middleman-autoprefixer)
+-   [Deploy](https://github.com/karlfreeman/middleman-deploy)
+-   [Dotenv](https://github.com/karlfreeman/middleman-dotenv)
+-   [Favicon maker](https://github.com/follmann/middleman-favicon-maker)
+-   [Livereload](https://github.com/middleman/middleman-livereload)
+-   [Meta tags](https://github.com/gabrielecanepa/middleman-meta-tags)
+-   [Minify HTML](https://github.com/middleman/middleman-minify-html)
+-   [Pry](https://github.com/AndrewKvalheim/middleman-pry)
+-   [Robots](https://github.com/yterajima/middleman-robots)
+
+#### Snippets
+
+-   [Inline SVGs](#images)
+-   [Favicon helper](#favicon)
+-   [404 page](#404-page)
+
+#### Linters
+
+-   [ESLint](https://eslint.org) for JavaScript
+-   [RuboCop](https://github.com/rubocop-hq/rubocop) for Ruby
+-   [stylelint](https://stylelint.io) for SCSS
+
+#### Debuggers
+
+-   [Pry-byebug](https://github.com/deivid-rodriguez/pry-byebug)
+-   [Rake](https://github.com/ruby/rake)
 
 ## Dependencies
 
-## Where to start?
+You must have the following tools installed to use this boilerplate:
 
-Start a new project with
+-   [Bundler](https://bundler.io)
+-   [Node](https://nodejs.org) (> v4)
+-   [Yarn](https://yarnpkg.com)
+
+## Installation
+
+Start a new project in your current directory
 
 ```bash
 $ middleman init -T gabrielecanepa/middleman-webpack
 ```
 
-### Configuration
+or in a new one:
 
-## Using yarn and webpack
+```bash
+$ middleman init <project-name> -T gabrielecanepa/middleman-webpack
+```
 
-## Styling
+You can also set up an alias like `middleman:webpack` in one of your shell profiles
 
-## Images
+```bash
+# ~/.bash_profile
+alias middleman:webpack="middleman init $1 gabrielecanepa/middleman-webpack"
+```
 
-## Testing and linters
+and use it to quickly initialize a new project:
 
-## Building and deploying
+![](https://github.com/gabrielecanepa/assets/raw/master/webpack-init/screen1.gif?sanitize=true)
 
-## Advanced configuration
+## Usage
 
-## Going further
+> 💡 A good usage example, that will be used through this wiki, is the [documentation website](https://github.com/gabrielecanepa/middleman-webpack-www) of the template
+
+```bash
+$ middleman server   # Run a local server
+$ middleman build    # Build the static files
+$ middleman deploy   # Deploy the built site
+```
+
+### Getting started
+
+You'll find the main settings of your website in `data/site.yml`.
+
+The properties you set up here will be used by the `auto_display_meta_tag` helper to inject specific tags in your views.
+
+The default configuration
+
+![](screen2.svg)
+
+produces the following tags for the homepage:
+
+![](screen1.png)
+
+Any tag can be overwritten (or created) in each page or layout with [frontmatter](https://middlemanapp.com/basics/frontmatter) (see [`source/404.html.erb`](https://github.com/gabrielecanepa/middleman-webpack/tree/master/template/source/404.html.erb)) or the `set_meta_tag` helper (see [`source/index.html.erb`](https://github.com/gabrielecanepa/middleman-webpack/tree/master/template/source/index.html.erb)).
+
+#### Favicon
+
+The icon you specify in the **favicon** field (`_favicon.svg` by default) must be relative to `source/assets/images`.
+
+In production, it will be used to generate your favicons and show the correspondent tags in your layouts, thanks to the `auto_display_favicon_tags` helper.
+
+You can change the favicons you want to produce in `config.rb`, and the tags generated by the helper will change dynamically.
+
+The favicons set by default
+
+```ruby
+# config.rb
+set :favicons, [
+  {
+    rel: 'apple-touch-icon',
+    size: '180x180',
+    icon: 'apple-touch-icon.png'
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    size: '32x32',
+    icon: 'favicon32x32.png'
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    size: '16x16',
+    icon: 'favicon16x16.png'
+  },
+  {
+    rel: 'shortcut icon',
+    size: '64x64,32x32,24x24,16x16',
+    icon: 'favicon.ico'
+  }
+]
+```
+
+generate the following tags and relative icons:
+
+![](screen3.svg)
+
+### Styling
+
+Each application has different design needs, that's why _Middleman webpack does not include any CSS or built-in solution_.
+
+Your `source/assets/stylesheets/all.css.scss` shows an overview of the suggested architecture and imports the default Middleman style:
+
+```scss
+// Suggested structure:
+// 1. Settings
+//    ├── settings/
+// 2. Vendors
+//    ├── vendors-stylesheets/
+//    ├── vendors-settings/
+// 3. Style
+//    ├── 1. base/
+//    ├── 2. components/
+//    ├── 3. layouts/
+//    └── 4. pages/
+
+@import "settings/colors";
+@import "settings/fonts";
+@import "base/site";
+```
+
+It's important to follow a similar structure to ensure the proper rendering of your style and respect CSS specificity:
+
+#### 1. Settings
+
+Your website setting must be imported first and contain the variables, mixins and resources you will use in your style. Check the [Sass documentation](https://sass-lang.com/documentation/file.SASS_REFERENCE) for a more advanced usage of this tools.
+
+#### 2. Vendors
+
+Vendor stylesheets must be imported right after your website settings, and before any eventual setting overriding the default package configuration.
+
+Any stylesheet added with Yarn can be imported into your stylesheet files with an `@import` statement followed by the path relative to the `node_modules` folder.
+
+For instance, the documentation website has been bundled with [bootstrap](https://www.npmjs.com/package/bootstrap), and to load the grid style from the package the following line was added to [`all.css.scss`](https://github.com/gabrielecanepa/middleman-webpack-www/tree/master/source/assets/stylesheets/all.css.scss):
+
+```scss
+@import "bootstrap/scss/bootstrap-grid";
+```
+
+> 💡 You can import stylesheets in your JavaScript files as well.
+> Check the [Yarn and webpack section](#using-yarn-and-webpack)
+
+#### 3. Style
+
+The last files to import must contain the actual style of your website:
+
+1.  _Base_: general style, typography, default elements
+2.  _Components_: buttons, cards, lists, etc.
+3.  _Layouts_: navbar, footer, sidebar, etc.
+4.  _Pages_: custom styling per page
+
+An example of this organization can be found in the [documentation website](https://github.com/gabrielecanepa/middleman-webpack-www/tree/master/source/assets/stylesheets):
+
+```scss
+// Settings
+@import "settings/colors";
+@import "settings/fonts";
+@import "settings/variables";
+
+// Vendors
+@import "bootstrap/scss/mixins/breakpoints";
+@import "bootstrap/scss/bootstrap-grid";
+@import "vendors-settings/bootstrap";
+@import "vendors-settings/icomoon";
+
+// Style
+// 1. Base
+@import "base/site";
+@import "base/typography";
+@import "base/elements";
+// 2. Components
+@import "components/buttons";
+@import "components/hero";
+@import "components/section-tools";
+@import "components/language-card";
+@import "components/tooltip";
+@import "components/code";
+// 3. Layouts
+@import "layouts/navbar";
+@import "layouts/footer";
+// 4. Pages
+@import "pages/about";
+```
+
+### Using Yarn and webpack
+
+The repository comes configured with [**webpack**](https://webpack.js.org) and the following loaders:
+
+-   [Babel](https://babeljs.io) for JavaScript
+-   [style-loader](https://github.com/webpack-contrib/style-loader), [css-loader](https://github.com/webpack-contrib/css-loader), [postcss-loader](https://github.com/postcss/postcss-loader) and [sass-loader](https://github.com/webpack-contrib/sass-loader) for CSS and SCSS
+
+webpack has been integrated thanks to the in-built [`external_pipeline`](https://middlemanapp.com/advanced/external-pipeline) extension (find its configuration in `config.rb`), that allows Middleman to run multiple subprocesses.
+
+<!-- Every time a server is run (in development or production) also the relative Yarn command gets executed (`yarn run start` or `yarn run build`), which runs in turn the right webpack process. -->
+
+> 💡 Want to setup your application with a different JavaScript pipeline? Check the [Middleman documentation](https://middlemanapp.com/advanced/external-pipeline)
+
+#### Packages
+
+To install a new package with [**Yarn**](https://yarnpkg.com) use the following command:
+
+```shell
+yarn add <package-name> [--dev]
+```
+
+In your JavaScript, you can import modules from a packages with the `import` statement.
+
+...
+
+#### Stylesheets
+
+...
+
+#### Advanced configuration
+
+### Images
+
+...
+
+### Building and deploying
+
+...
+
+## Extra
+
+### Testing and linters
+
+...
+
+### 404 page
+
+...
+
+## Contributing
+
+1.  [Fork the repository](https://github.com/gabrielecanepa/middleman-webpack)
+2.  Create your feature branch (`git checkout -b my-new-feature`)
+3.  Commit your changes (`git commit -m "Add some feature"`)
+4.  Push to the branch (`git push origin my-new-feature`)
+5.  Create a new pull request
+
+## License
+
+[![](https://github.com/gabrielecanepa/assets/raw/master/badges/mit.svg?sanitize=true)](https://gabriele.canepa.io/mit)

@@ -11,14 +11,17 @@
   </div>
 
   <% if content == "home" %>
-    <h1><code>and</code></h1>
-    <% count = 0 %>
-    <% data.tools.keys[6..data.tools.keys.length].each do |tool| %>
-      <% count += 1 %>
-      <% link_to data.tools[tool].website, target: "_blank" do %>
-        <h3 class="tool"><code class="language-*" data-tippy="<%= data.tools[tool].description %>" data-tippy-placement="<%= count % 2 == 0 ? "right" : "left" %>" data-tippy-distance="25"><%= tool %></code></h3>
+    <div class="section-tools-secondary">
+      <h1><code>and</code></h1>
+
+      <% count = 0 %>
+      <% data.tools.keys[6..data.tools.keys.length].each do |tool| %>
+        <% count += 1 %>
+        <% link_to data.tools[tool].website, target: "_blank" do %>
+          <h3 class="tool"><code class="language-*" data-tippy="<%= data.tools[tool].description %>" data-tippy-placement="<%= count % 2 == 0 ? "right" : "left" %>" data-tippy-distance="25"><%= tool %></code></h3>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   <% end %>
 
   <div class="section-tools-buttons">

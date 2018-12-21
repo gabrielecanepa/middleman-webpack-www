@@ -1,8 +1,6 @@
 import Typed from "typed.js";
+import "tippy.js/dist/tippy.css";
 
-const browserTypeOptions = {
-  strings: ["middleman init -T gabrielecanepa/middleman-webpack"],
-  typeSpeed: 40
-};
+const typeText = (selector, options) => new Typed(selector, options);
 
-(() => new Typed(".browser-code .content", browserTypeOptions))();
+export default typeText;

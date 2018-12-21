@@ -1,7 +1,16 @@
 <footer>
   <%= svg_tag "avatar.svg", class: "avatar" %>
-  <code>© 2018 <%= link_to "Gabriele Canepa", data.site.author.website, target: "_blank" %></code>
-  <code>Built with <%= link_to "Middleman webpack", data.site.repository + "-www", target: "_blank" %></code>
-  <code><%= link_to "Contact", "mailto:" + data.site.author.email %></code>
-  <code><%= link_to "Github", "https://github.com/#{data.site.author.github}", target: "_blank" %></code>
+  
+  <code>
+    © <%= Date.today.year %> <%= link_to "Gabriele Canepa", data.site.author.website, target: "_blank" %>
+  </code>
+  <code>
+    Built with <%= link_to "Middleman webpack", data.site.repository + "-www", target: "_blank" %>
+  </code>
+  <code>
+    <%= link_to "Contact", "mailto:" + data.site.author.email %>
+  </code>
+  <code>
+    <%= link_to "Github", "https://github.com/#{data.site.author.github}", target: "_blank" %>
+  </code>
 </footer>

@@ -37,7 +37,9 @@ set :favicons, [
 ]
 
 set :markdown_engine, :redcarpet
-set :markdown,        fenced_code_blocks: true
+set :markdown,        fenced_code_blocks: true,
+                      tables: true,
+                      with_toc_data: true
 
 # Extensions
 
@@ -53,7 +55,7 @@ activate :external_pipeline,
 
 activate :dotenv
 activate :meta_tags
-activate :syntax, css_class: "highlight-syntax"
+activate :syntax, css_class: 'highlight-syntax'
 
 page '/*.xml',  layout: false
 page '/*.json', layout: false
@@ -74,13 +76,12 @@ configure :build do
   activate :asset_hash
   activate :favicon_maker, icons: generate_favicon_hash
   activate :gzip
-  activate :imageoptim, manifest: false, pngout: false, svgo: false
   activate :minify_css
   activate :minify_html
   activate :minify_javascript
   activate :relative_assets
-  activate :robots,  rules: [{ user_agent: '*', allow: %w[/] }],
-                     sitemap: File.join(@app.data.site.host, 'sitemap.xml')
+  activate :robots, rules: [{ user_agent: '*', allow: %w[/] }],
+                    sitemap: File.join(@app.data.site.host, 'sitemap.xml')
 end
 
 activate :deploy do |deploy|

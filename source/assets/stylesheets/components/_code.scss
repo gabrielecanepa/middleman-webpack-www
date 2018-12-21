@@ -3,22 +3,23 @@ code, pre {
   font-size: 1em;
   position: relative;
 }
-:not(pre) > code[class*="language-"] {
-  padding: .2em;
+:not(pre) > code {
+  padding: 0.2em;
   border-radius: 0.3em;
-  color: $red;
-  border: 1px solid rgba(0, 0, 0, 0.1);
   display: inline;
+  &:focus { outline: none}
 }
-:not(pre) > code:focus {
-  outline: none;
+:not(pre) > code[class*="language-"] {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: $red;
 }
 
 .highlight-syntax {
   color: $black;
   background: $white-dark;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   text-align: left;
-  overflow: visible;
+  overflow: scroll;
   padding: 1.5em 2em;
   margin: 1.5em 0;
   border-radius: 0.3em;
@@ -26,21 +27,21 @@ code, pre {
   .c   { color: $gray } // Comment
   .err { color: $gray-dark } // Error
   .g   { color: $gray-dark } // Generic
-  .k   { color: $green-darker } // Keyword
+  .k   { color: $green-dark } // Keyword
   .l   { color: $gray-dark } // Literal
   .n   { color: $gray-dark } // Name
-  .o   { color: $green-darker } // Operator
+  .o   { color: $green-dark } // Operator
   .x   { color: $orange } // Other
   .p   { color: $gray-dark } // Punctuation
   .cm  { color: $gray } // Comment multiline
-  .cp  { color: $green-darker } // Comment preproc
-  .c1  { color: $green; } // Comment single
-  .cs  { color: $green-darker } // Comment special
+  .cp  { color: $green-dark } // Comment preproc
+  .c1  { color: $gray; } // Comment single
+  .cs  { color: $green-dark } // Comment special
   .gd  { color: $blue-light } // Generic deleted
   .ge  { color: $gray-dark; font-style: italic } // Generic emphasis
   .gr  { color: $red } // Generic error
   .gh  { color: $orange } // Generic heading
-  .gi  { color: $green-darker } // Generic inserted
+  .gi  { color: $green-dark } // Generic inserted
   .go  { color: $gray-dark } // Generic output
   .gp  { color: $gray-dark } // Generic prompt
   .gs  { color: $gray-dark; font-weight: bold } // Generic strong
@@ -48,8 +49,8 @@ code, pre {
   .gt  { color: $gray-dark } // Generic traceback
   .kc  { color: $orange } // Keyword constant
   .kd  { color: $blue } // Keyword declaration
-  .kn  { color: $green-darker } // Keyword namespace
-  .kp  { color: $green-darker } // Keyword pseudo
+  .kn  { color: $green-dark } // Keyword namespace
+  .kp  { color: $green-dark } // Keyword pseudo
   .kr  { color: $blue } // Keyword reserved
   .kt  { color: $red } // Keyword type
   .ld  { color: $gray-dark } // Literal date
@@ -69,7 +70,7 @@ code, pre {
   .py  { color: $gray-dark } // Name property
   .nt  { color: $blue } // Name tag
   .nv  { color: $blue } // Name variable
-  .ow  { color: $green-darker } // Operator word
+  .ow  { color: $green-dark } // Operator word
   .w   { color: $gray-dark } // Text whitespace
   .mf  { color: $blue-light } // Literal number (float)
   .mh  { color: $blue-light } // Literal number (hex)
@@ -91,4 +92,6 @@ code, pre {
   .vg  { color: $blue } // Name variable global
   .vi  { color: $blue } // Name variable instance
   .il  { color: $blue-light } // Literal number (long integer)
+
+  &.plaintext code { color: $gray-dark }
 }

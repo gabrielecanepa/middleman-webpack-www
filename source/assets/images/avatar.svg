@@ -46,13 +46,22 @@
   const mouth1 = document.getElementById("mouth-1");
   const mouth2 = document.getElementById("mouth-2");
   const avatar = document.getElementById("avatar");
-  avatar.addEventListener("mouseover", (event) => {
-    mouth1.style.display = 'none';
-    mouth2.style.display = 'block';
-  });
-  avatar.addEventListener("mouseout", (event) => {
-    mouth1.style.display = 'block';
-    mouth2.style.display = 'none';
-  });
+	let lastScroll = 0;
+
+	window.addEventListener("scroll", () => {
+		mouth1.style.display = "none";
+		mouth2.style.display = "block";
+
+		lastScroll = window.scrollY;
+	});
+
+	function checkUserScroll() {
+		if (lastScroll === window.scrollY) {
+			mouth1.style.display = "block";
+			mouth2.style.display = "none";
+		}
+	}
+
+	setInterval(checkUserScroll, 500);
 </script>
 </svg>

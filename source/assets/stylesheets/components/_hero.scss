@@ -1,6 +1,7 @@
 .hero {
   background: $yellow;
   text-align: center;
+
   .wrap-container {
     max-width: 1200px;
     margin-left: auto;
@@ -50,7 +51,7 @@
     padding: 2em 0 3em 0;
     display: block;
     color: white;
-    .variable { color: $gold; }
+    .variable { color: $gold }
   }
   .version-number {
     position: absolute;
@@ -62,4 +63,8 @@
   }
 }
 
-@include media-breakpoint-up(md) { .hero .browser { width: 66.6%; } }
+@include media-breakpoint-up(md) {
+  .hero .browser {
+    width: 66.6%;
+  }
+}

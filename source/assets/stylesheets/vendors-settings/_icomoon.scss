@@ -24,12 +24,8 @@ i {
   line-height: 1;
 }
 .icomoon-github {
-  &::before {
-    content: $icomoon-github;
-  }
+  &::before { content: $icomoon-github }
 }
 .icomoon-middleman {
-  &::before {
-    content: $icomoon-middleman;
-  }
+  &::before { content: $icomoon-middleman }
 }

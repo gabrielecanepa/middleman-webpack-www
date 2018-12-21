@@ -1,0 +1,30 @@
+.sidebar {
+  width: 100%;
+  position: sticky;
+  top: 2em;
+  margin: 2em 0;
+  padding: 1.5em 2em;
+  height: calc(100vh - 4em);
+  overflow-y: scroll;
+  background: $white-dark;
+  color: $black;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.3em;
+  text-align: left;
+
+  code {
+    display: block;
+    padding-bottom: 0.5em;
+    font-size: 1.1em;
+  }
+  a {
+    color: $red;
+  }
+  small {
+    font-size: 0.7em;
+  }
+  .logo {
+    height: 3em;
+    margin-bottom: 1em;
+  }
+}

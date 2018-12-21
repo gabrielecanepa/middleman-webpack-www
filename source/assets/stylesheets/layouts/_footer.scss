@@ -4,13 +4,16 @@ footer {
   padding: 4rem 1rem;
   text-align: center;
   font-size: 1.1em;
-  a { color: $red; }
+
+  a {
+    color: $red;
+  }
   code {
     display: block;
     margin: 1em 0;
   }
   .avatar {
     width: 2em;
-    &:hover { cursor: none; }
+    &:hover { cursor: none }
   }
 }
