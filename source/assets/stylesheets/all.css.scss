@@ -5,9 +5,10 @@
 @import "settings/fonts";
 
 // Vendors
-@import "vendors-settings/icomoon";
-@import "bootstrap/scss/mixins/breakpoints";
 @import "bootstrap/scss/bootstrap-grid";
+@import "bootstrap/scss/utilities/spacing";
+@import "vendors-settings/bootstrap";
+@import "vendors-settings/icomoon";
 
 // Style
 // 1. Base

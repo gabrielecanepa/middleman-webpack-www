@@ -77,7 +77,7 @@ alias middleman:webpack="middleman init $1 gabrielecanepa/middleman-webpack"
 
 and use it to quickly initialize a new project:
 
-![](https://github.com/gabrielecanepa/assets/raw/master/webpack-init/screen1.gif?sanitize=true)
+![](screen1.png)
 
 ## Usage
 
@@ -97,7 +97,7 @@ The properties you set up here will be used by the `auto_display_meta_tag` helpe
 
 The default configuration
 
-![](screen2.svg)
+![](screen1.png)
 
 produces the following tags for the homepage:
 
@@ -145,7 +145,7 @@ set :favicons, [
 
 generate the following tags and relative icons:
 
-![](screen3.svg)
+![](screen1.png)
 
 ### Styling
 
@@ -247,7 +247,7 @@ webpack has been integrated thanks to the in-built [`external_pipeline`](https:/
 
 > 💡 Want to setup your application with a different JavaScript pipeline? Check the [Middleman documentation](https://middlemanapp.com/advanced/external-pipeline)
 
-#### Packages
+#### Installing packages
 
 To install a new package with [**Yarn**](https://yarnpkg.com) use the following command:
 
@@ -259,7 +259,7 @@ In your JavaScript, you can import modules from a packages with the `import` sta
 
 ...
 
-#### Stylesheets
+#### Importing stylesheets
 
 ...
 

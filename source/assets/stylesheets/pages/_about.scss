@@ -1,29 +1,35 @@
 .about {
-  padding-top: 2em;
-  padding-bottom: 2.5em;
+  padding: 2em 3em;
 
-  h1, h2, h3, h4 {
-    line-height: 1.4;
+  h1, h2, h3 {
+    line-height: 2.5;
+    margin: 0;
   }
   h1, h2 {
-    padding-bottom: 0.5em;
     border-bottom: 2px solid $gray-light;
   }
+  h1 {
+    font-size: 2.2em;
+  }
   h2 {
-    font-size: 1.7em;
     border-width: 1px;
+    font-size: 1.7em;
   }
   h3 {
     font-size: 1.5em;
   }
   h4 {
-    font-size: 1.3em;
+    line-height: 1.4;
+    font-size: 1.25em;
   }
   p {
     line-height: 1.8;
   }
   p, li  {
     font-size: 1.1em;
+  }
+  h3 + p {
+    margin-top: 0.5em;
   }
   li {
     line-height: 1.5;
@@ -36,11 +42,11 @@
     &:hover { text-decoration: underline }
   }
   :not(pre) > code {
+    background-color: $white-dark;
+    color: $red;
+    font-size: 85%;
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin: 0 0.1em;
-    font-size: 85%;
-    color: $red;
-    background-color: $white-dark;
     overflow-wrap: break-word;
   }
   img[src*="screen"] {
@@ -50,40 +56,37 @@
   blockquote {
     border-left: .25em solid $gray-light;
     color: rgba($gray-dark, 0.7);
-    // font-size: 95%;
     padding: 0 1em;
     margin-inline-start: 0;
   }
   strong {
     font-weight: 600;
   }
-  // table {
-  //   width: 100%;
-  //   overflow: auto;
-  //   display: block;
-  //   margin: 1.5em 0;
-  //   border-spacing: 0;
-  //   border-collapse: collapse;
-  //   tr {
-  //     border-top: 1px solid $gray;
-  //     background-color: $white;
-  //     &:nth-child(2n) {
-  //       background-color: rgba($gray-light, 0.3);
-  //     }
-  //   }
-  //   th, td {
-  //     border: 1px solid $gray-light;
-  //     padding: 0.8em;
-  //   }
-  // }
+  table {
+    display: block;
+    width: 100%;
+    margin: 1.5em 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    overflow: auto;
+
+    tr {
+      background-color: $white;
+      border-top: 1px solid $gray;
+      &:nth-child(2n) {
+        background-color: rgba($gray-light, 0.3);
+      }
+    }
+    th, td {
+      padding: 0.8em;
+      border: 1px solid $gray-light;
+    }
+  }
 }
 
 @include media-breakpoint-down(sm) {
-  .about { padding: 0.5em 1em 2em }
+  .about { padding: 1em 1.5em 1.5em }
 }
 @include media-breakpoint-down(lg) {
   .about img[src*="screen"] { padding: 0 }
-}
-@include media-breakpoint-up(md) {
-  .about { padding-left: 2em }
 }
