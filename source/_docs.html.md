@@ -75,13 +75,11 @@ You can also set up an alias like `middleman:webpack` in one of your shell profi
 alias middleman:webpack="middleman init $1 gabrielecanepa/middleman-webpack"
 ```
 
-and use it to quickly initialize a new project:
-
-![](https://github.com/gabrielecanepa/assets/raw/master/middleman-webpack/screen1.png?sanitize=true)
+and use it to quickly initialize a new project.
 
 ## Usage
 
-> 💡 A good usage example, that will be used through this wiki, is the [documentation website](https://github.com/gabrielecanepa/middleman-webpack-www) of the template
+> 💡 A good usage example, that will be used through this wiki, is the same [documentation website](https://github.com/gabrielecanepa/middleman-webpack-www) of the template
 
 ```bash
 $ middleman server   # Run a local server
@@ -101,13 +99,16 @@ The default configuration
 
 produces the following tags for the homepage:
 
-![](https://github.com/gabrielecanepa/assets/raw/master/middleman-webpack/screen1.png?sanitize=true)
+![](https://github.com/gabrielecanepa/assets/raw/master/middleman-webpack/screen2.png?sanitize=true)
 
-Any tag can be overwritten (or created) in each page or layout with [frontmatter](https://middlemanapp.com/basics/frontmatter) (see [`source/404.html.erb`](https://github.com/gabrielecanepa/middleman-webpack/tree/master/template/source/404.html.erb)) or the `set_meta_tag` helper (see [`source/index.html.erb`](https://github.com/gabrielecanepa/middleman-webpack/tree/master/template/source/index.html.erb)).
+Any tag can be overwritten (or created) in each page or layout with [frontmatter](https://middlemanapp.com/basics/frontmatter) (see `source/404.html.erb`) or the `set_meta_tag` helper (see `source/index.html.erb`).
 
 #### Favicon
 
 The icon you specify in the **favicon** field (`_favicon.svg` by default) must be relative to `source/assets/images`.
+
+The leading underscore prevents it from being copied into the build directory.
+The image format should be either PNG or SVG.
 
 In production, it will be used to generate your favicons and show the correspondent tags in your layouts, thanks to the `auto_display_favicon_tags` helper.
 
@@ -145,7 +146,12 @@ set :favicons, [
 
 generate the following tags and relative icons:
 
-![](https://github.com/gabrielecanepa/assets/raw/master/middleman-webpack/screen1.png?sanitize=true)
+```html
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon16x16.png">
+<link rel="shortcut icon" sizes="64x64,32x32,24x24,16x16" href="assets/images/favicon/favicon.ico">
+```
 
 ### Styling
 
@@ -175,7 +181,7 @@ It's important to follow a similar structure to ensure the proper rendering of y
 
 #### 1. Settings
 
-Your website setting must be imported first and contain the variables, mixins and resources you will use in your style. Check the [Sass documentation](https://sass-lang.com/documentation/file.SASS_REFERENCE) for a more advanced usage of this tools.
+Your website setting must be imported first and contain the variables, mixins and rules you will use in your style. Check the [Sass documentation](https://sass-lang.com/documentation/file.SASS_REFERENCE) for a more advanced usage of this resources.
 
 #### 2. Vendors
 
@@ -183,105 +189,158 @@ Vendor stylesheets must be imported right after your website settings, and befor
 
 Any stylesheet added with Yarn can be imported into your stylesheet files with an `@import` statement followed by the path relative to the `node_modules` folder.
 
-For instance, the documentation website has been bundled with [bootstrap](https://www.npmjs.com/package/bootstrap), and to load the grid style from the package the following line was added to [`all.css.scss`](https://github.com/gabrielecanepa/middleman-webpack-www/tree/master/source/assets/stylesheets/all.css.scss):
+For instance, the documentation website has been bundled with [bootstrap](https://www.npmjs.com/package/bootstrap), and to load the grid style from the package the following line was added to `all.css.scss`:
 
 ```scss
 @import "bootstrap/scss/bootstrap-grid";
 ```
 
-> 💡 You can import stylesheets in your JavaScript files as well.
-> Check the [Yarn and webpack section](#using-yarn-and-webpack)
+> 💡 You can also import stylesheets in your JavaScript files.
+> Check the [Yarn and webpack section](#importing-stylesheets)
 
 #### 3. Style
 
 The last files to import must contain the actual style of your website:
 
-1.  _Base_: general style, typography, default elements
+1.  _Base_: general style, typography, base elements
 2.  _Components_: buttons, cards, lists, etc.
 3.  _Layouts_: navbar, footer, sidebar, etc.
 4.  _Pages_: custom styling per page
 
-An example of this organization can be found in the [documentation website](https://github.com/gabrielecanepa/middleman-webpack-www/tree/master/source/assets/stylesheets):
-
-```scss
-// Settings
-@import "settings/colors";
-@import "settings/fonts";
-
-// Vendors
-@import "bootstrap/scss/bootstrap-grid";
-@import "bootstrap/scss/utilities/spacing";
-@import "vendors-settings/bootstrap";
-@import "vendors-settings/icomoon";
-
-// Style
-// 1. Base
-@import "base/site";
-@import "base/typography";
-@import "base/elements";
-// 2. Components
-@import "components/buttons";
-@import "components/hero";
-@import "components/language-card";
-@import "components/section-tools";
-@import "components/tooltip";
-@import "components/code";
-// 3. Layouts
-@import "layouts/navbar";
-@import "layouts/footer";
-@import "layouts/sidebar";
-// 4. Pages
-@import "pages/about";
-```
+An example of this organization can be found in the [documentation website](https://github.com/gabrielecanepa/middleman-webpack-www/tree/master/source/assets/stylesheets).
 
 ### Using Yarn and webpack
 
-The repository comes configured with [**webpack**](https://webpack.js.org) and the following loaders:
+The repository comes configured with [**Yarn**](https://yarnpkg.com), [**webpack**](https://webpack.js.org) and the following loaders:
 
 -   [Babel](https://babeljs.io) for JavaScript
 -   [style-loader](https://github.com/webpack-contrib/style-loader), [css-loader](https://github.com/webpack-contrib/css-loader), [postcss-loader](https://github.com/postcss/postcss-loader) and [sass-loader](https://github.com/webpack-contrib/sass-loader) for CSS and SCSS
 
-webpack has been integrated thanks to the in-built [`external_pipeline`](https://middlemanapp.com/advanced/external-pipeline) extension (find its configuration in `config.rb`), that allows Middleman to run multiple subprocesses.
+webpack has been integrated thanks to the in-built `external_pipeline` extension (find its configuration in `config.rb`), that allows Middleman to run multiple subprocesses.
 
-<!-- Every time a server is run (in development or production) also the relative Yarn command gets executed (`yarn run start` or `yarn run build`), which runs in turn the right webpack process. -->
+Every time a server is run (in development or production), also the relative Yarn command gets executed (`yarn run start` or `yarn run build`), which runs in turn the right webpack process.
 
-> 💡 Want to setup your application with a different JavaScript pipeline? Check the [Middleman documentation](https://middlemanapp.com/advanced/external-pipeline)
+> 💡 Want to setup your application with a different JavaScript pipeline? Have a look at the relative [Middleman documentation](https://middlemanapp.com/advanced/external-pipeline)
 
 #### Installing packages
 
-To install a new package with [**Yarn**](https://yarnpkg.com) use the following command:
+Install a new package with the following command:
 
 ```shell
 yarn add <package-name> [--dev]
 ```
 
-In your JavaScript, you can import modules from a packages with the `import` statement.
+In your JavaScript files, you can import modules from a packages with the `import` statement.
 
-...
+For instance, the documentation website uses [Tippy.js](https://atomiks.github.io/tippyjs) to display tooltips, and its default behavior was set after importing the `tippy` object from the package:
+
+```javascript
+import tippy from "tippy.js";
+
+tippy.setDefaults({
+  arrow: true,
+  arrowType: "round",
+  duration: [275, 200],
+  inertia: true
+});
+```
 
 #### Importing stylesheets
 
-...
+You can import CSS and SCSS in your scripts with a normal `import` statement, thanks to the pre-installed webpack style loaders (webpack only bundles JavaScript by default, specific loaders are needed to bundle other kind of resources).
+
+For example, to import the default Tippy.js style, this line has to be added to our JavaScript:
+
+```javascript
+import "tippy.js/dist/tippy.css";
+```
+
+> 💡 You can also extract CSS into separate files with the [mini-css-extractor-plugin](https://www.npmjs.com/package/mini-css-extract-plugin)
 
 #### Advanced configuration
 
+webpack it is capable of transforming, bundling, or packaging just about any resource or asset.
+
+If you want to understand and master the wide variety of tools and features that this tool offers, have a look at the [official webpack guides](https://webpack.js.org/guides).
+
 ### Images
 
-...
+You can embed inline SVG icons in your views thanks to the `svg_tag` helper:
+
+```ruby
+svg_tag(file_name, attributes = {})
+```
+
+The `file_name` has to be relative to your images folder. HTML `attributes` (id, class, title, etc.) can be specified directly in the helper.
+
+You can find an example of embedding an SVG document and applying a class attribute in your `source/index.html.erb`:
+
+```erb
+<%= svg_tag "logo.svg", class: "middleman-logo" %>
+```
+
+The biggest advantage of using inline SVGs is being able to _have complete control over the different shapes using CSS and JavaScript_.
+
+For instance, different shapes composing the avatar in the footer of the documentation website have been animated thanks to this simple script:
+
+```javascript
+const mouth1 = document.getElementById("avatar-mouth-1");
+const mouth2 = document.getElementById("avatar-mouth-2");
+
+const showSmile = () => {
+  mouth1.style.display = "none";
+  mouth2.style.display = "block";
+};
+const showNormal = () => {
+  mouth2.style.display = "none";
+  mouth1.style.display = "block";
+};
+
+window.addEventListener("scroll", () => {
+  showSmile();
+  setTimeout(showNormal, 500);
+});
+```
 
 ### Building and deploying
 
-...
+Finally, when you are ready to deliver static code, you will need to build the site. Using the command-line, from the project folder, run the correspondent Middleman command:
+
+```bash
+$ middleman build
+```
+
+This will create a static file for each file located in your source folder, and generate your webpack bundles and favicons.
+
+Any enabled build-time features (such as minification and compression) will be executed. You can find the extensions activated by default in the build-specific configuration section of your `config.rb`.
+
+After building the site you have everything you need within the `build` directory.
+
+A very handy tool to deploy a build is [middleman-deploy](https://github.com/karlfreeman/middleman-deploy). By default, it has been configured to deploy your website on [GitHub Pages](https://pages.github.com) via the `gh-pages` branch, and build the static files before any new deployment.
+
+To activate the extension, simply run from your command-line:
+
+```bash
+$ middleman deploy
+```
 
 ## Extra
 
 ### Testing and linters
 
-...
+You can test your code thanks to the [Rake gem](https://github.com/ruby/rake), allowing you to write tests and tasks in standard Ruby syntax.
+
+By default, 3 tasks have been defined, each one testing the style for a specific language (JavaScript, SCSS and Ruby). Run them with the `rake` command:
+
+![](https://github.com/gabrielecanepa/assets/raw/master/middleman-webpack/screen3.png?sanitize=true)
+
+If you are using [Atom](https://atom.io) as text editor, you can use [linter-eslint](https://atom.io/packages/linter-eslint), [linter-rubocop](https://atom.io/packages/linter-rubocop) and [linter-stylelint](https://atom.io/packages/linter-stylelint) to check your style while you write code. If you use [Sublime Text](https://www.sublimetext.com), have a look at the [ESLint](https://packagecontrol.io/packages/ESLint), [RuboCop](https://packagecontrol.io/packages/RuboCop) and [stylelint](https://packagecontrol.io/packages/SublimeLinter-stylelint) extensions.
 
 ### 404 page
 
-...
+A 404 page is already provided for you. Use it to display a custom design when visitors attempts to access pages that don’t exist:
+
+![](https://github.com/gabrielecanepa/assets/raw/master/middleman-webpack/screen4.png?sanitize=true)
 
 ## Contributing
 
@@ -291,6 +350,6 @@ In your JavaScript, you can import modules from a packages with the `import` sta
 4.  Push to the branch (`git push origin my-new-feature`)
 5.  Create a new pull request
 
-## License
+<!-- ## License
 
-[![](https://github.com/gabrielecanepa/assets/raw/master/badges/mit.svg?sanitize=true)](https://gabriele.canepa.io/mit)
+[![](https://github.com/gabrielecanepa/assets/raw/master/badges/mit.svg?sanitize=true)](https://gabriele.canepa.io/mit) -->

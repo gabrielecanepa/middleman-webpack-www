@@ -10,19 +10,17 @@
     </div>
   </div>
 
-  <% if content == "home" %>
-    <div class="section-tools-secondary">
-      <h1><code>and</code></h1>
+  <div class="section-tools-secondary">
+    <h1><code>and</code></h1>
 
-      <% count = 0 %>
-      <% data.tools.keys[6..data.tools.keys.length].each do |tool| %>
-        <% count += 1 %>
-        <% link_to data.tools[tool].website, target: "_blank" do %>
-          <h3 class="tool"><code class="language-*" data-tippy="<%= data.tools[tool].description %>" data-tippy-placement="<%= count % 2 == 0 ? "right" : "left" %>" data-tippy-distance="25"><%= tool %></code></h3>
-        <% end %>
+    <% count = 0 %>
+    <% data.tools.keys[6..data.tools.keys.length].each do |tool| %>
+      <% count += 1 %>
+      <% link_to data.tools[tool].website, target: "_blank" do %>
+        <h3 class="tool"><code class="language-*" data-tippy="<%= data.tools[tool].description %>" data-tippy-placement="<%= count % 2 == 0 ? "right" : "left" %>" data-tippy-distance="25"><%= tool %></code></h3>
       <% end %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 
   <div class="section-tools-buttons">
     <%= link_to "<i class=\"icomoon icomoon-middleman\"></i> Read documentation", "/about.html", class: "btn btn-yellow" %>

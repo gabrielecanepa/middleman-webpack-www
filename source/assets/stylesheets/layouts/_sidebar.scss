@@ -12,15 +12,19 @@
 
   code {
     display: block;
-    padding-bottom: 0.5em;
+    padding: 0.5em 0;
     font-size: 1.1em;
   }
   a {
+    display: block;
     color: $black;
 
     &.active {
       color: $red;
     }
+  }
+  h6 a {
+    padding-left: 1em;
   }
   small {
     font-size: 0.7em;
