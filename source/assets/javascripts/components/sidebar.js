@@ -2,7 +2,16 @@ const buildSidebarMenu = (sidebar, headings) => {
   headings.forEach((heading) => {
     let sidebarLink;
 
-    if (heading.tagName === "H2") {
+    if (heading.tagName === "H1") {
+      sidebarLink = `
+        <a class="sidebar-title" href="#${heading.id}">
+          <div class="logo-container">
+            <img src="assets/images/logo.svg" class="logo">
+          </div>
+          <code>1.0</code>
+        </a>
+      `;
+    } else if (heading.tagName === "H2") {
       sidebarLink = `
         <h4>
           <a href="#${heading.id}">

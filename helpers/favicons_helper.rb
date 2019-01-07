@@ -3,33 +3,38 @@ module FaviconsHelper
     icon_path = File.join(config[:images_dir], @app.data.site.favicon)
     favicons  = config[:favicons]
 
-    favicons.each { |favicon| add_output_path_to_favicon(favicon) }
-
     { icon_path => favicons }
   end
 
   def auto_display_favicon_tags
-    icon_path    = File.join(config[:images_dir], @app.data.site.favicon)
-    favicon_tags = []
+    result = []
 
-    generate_favicons_hash[icon_path].each do |favicon|
-      favicon_tags << tag(:link, generate_favicon_tag_attributes(favicon))
+    if (base_color = @app.data.site.base_color)
+      result << tag(:meta, name: 'theme-color',
+                           content: base_color)
+      result << tag(:meta, name: 'msapplication-TileColor',
+                           content: base_color)
     end
 
-    favicon_tags.join("\n").html_safe
+    result += auto_generate_favicon_tags
+    result =  result.join("\n")
+    result.html_safe
   end
 
   private
 
-  def add_output_path_to_favicon(favicon)
-    output_path = File.join(config[:images_dir], 'favicon')
+  def auto_generate_favicon_tags
+    icon_path    = File.join(config[:images_dir], @app.data.site.favicon)
+    favicon_tags = []
 
-    return if favicon[:icon].include?(output_path)
+    generate_favicons_hash[icon_path].each do |favicon|
+      favicon_tags << tag(:link, favicon_tag_attributes(favicon))
+    end
 
-    favicon[:icon] = File.join(output_path, favicon[:icon])
+    favicon_tags
   end
 
-  def generate_favicon_tag_attributes(favicon)
+  def favicon_tag_attributes(favicon)
     attributes = {}
 
     favicon.each_key do |key|

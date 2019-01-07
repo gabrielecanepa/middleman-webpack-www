@@ -1,28 +1,13 @@
 // Settings
-@import "settings/colors";
-@import "settings/fonts";
+@import "settings/index";
 
 // Vendors
 @import "bootstrap/scss/bootstrap-grid";
 @import "bootstrap/scss/utilities/spacing";
-@import "vendors-settings/bootstrap";
-@import "vendors-settings/icomoon";
+@import "vendors-settings/index";
 
 // Style
-// 1. Base
-@import "base/site";
-@import "base/typography";
-@import "base/elements";
-// 2. Components
-@import "components/buttons";
-@import "components/hero";
-@import "components/language-card";
-@import "components/section-tools";
-@import "components/tooltip";
-@import "components/code";
-// 3. Layouts
-@import "layouts/navbar";
-@import "layouts/footer";
-@import "layouts/sidebar";
-// 4. Pages
-@import "pages/about";
+@import "base/index";
+@import "components/index";
+@import "layouts/index";
+@import "pages/index";

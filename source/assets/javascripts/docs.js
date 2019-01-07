@@ -6,19 +6,12 @@ document.addEventListener("touchstart", () => {}, true);
 
 // Build sidebar and highlight current section title
 const sidebar = document.querySelector(".sidebar");
-const sidebarHeadings = document.querySelectorAll("h2, h3");
+const sidebarHeadings = document.querySelectorAll("h1, h2, h3");
 
 buildSidebarMenu(sidebar, sidebarHeadings);
 
 window.addEventListener("scroll", () => {
   highlightSidebar(sidebar, sidebarHeadings);
-});
-
-// Open links in a new tab, except for the local ones
-document.querySelectorAll(".about a").forEach((a) => {
-  if (!a.href.includes(window.location.hostname)) {
-    a.setAttribute("target", "_blank");
-  }
 });
 
 // Don't decorate links around code
@@ -36,12 +29,27 @@ document.querySelectorAll(".about img[src*=\"screen\"]").forEach((img) => {
   paragraphStyle.lineHeight = 0;
 });
 
-// Zoom screen pictures
+// Zoom screen pictures (open image source on mobile)
 document.querySelectorAll(".about img[src*=\"screen\"]").forEach((img) => {
-  const zoomImage = zoom({
-    bgColor: "#FBC547",
-    scaleExtra: 1
-  });
+  if (window.innerWidth > 576) {
+    const zoomImage = zoom({
+      scaleExtra: 1,
+      transitionDuration: 0.2
+    });
+    zoomImage.listen(img);
+  } else {
+    const imgLink = document.createElement("a");
+    imgLink.innerHTML = img.outerHTML;
+    imgLink.setAttribute("href", img.src);
 
-  zoomImage.listen(img);
+    img.parentNode.insertBefore(imgLink, img);
+    img.remove();
+  }
+});
+
+// Open links in a new tab, except for the local ones
+document.querySelectorAll(".about a").forEach((a) => {
+  if (!a.href.includes(window.location.hostname)) {
+    a.setAttribute("target", "_blank");
+  }
 });
