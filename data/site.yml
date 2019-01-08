@@ -6,7 +6,7 @@ thumbnail:    "banner.jpg"
 favicon:      "_favicon.svg"
 base_color:   "#FBC547"
 repository:   "https://github.com/gabrielecanepa/middleman-webpack"
-version:      "1.0"
+version:      "1.0.0-alpha"
 license:      "https://gabriele.canepa.io/mit-license"
 geocoding:
   place:      "Lisbon, Portugal"

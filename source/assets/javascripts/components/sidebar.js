@@ -8,7 +8,7 @@ const buildSidebarMenu = (sidebar, headings) => {
           <div class="logo-container">
             <img src="assets/images/logo.svg" class="logo">
           </div>
-          <code>1.0</code>
+          <code>1.0.0-alpha</code>
         </a>
       `;
     } else if (heading.tagName === "H2") {
@@ -37,6 +37,7 @@ const highlightSidebar = (sidebar, headings) => {
   const windowPosition = window.scrollY;
 
   headings.forEach((heading, index) => {
+    const sidebarLinks = sidebar.querySelectorAll("a");
     const headingPosition = heading.offsetTop;
     let nextHeadingPosition;
 
@@ -47,11 +48,14 @@ const highlightSidebar = (sidebar, headings) => {
     }
 
     if (windowPosition > headingPosition && windowPosition < nextHeadingPosition) {
-      const sidebarLinks = sidebar.querySelectorAll("a");
       const currentLink = sidebar.querySelector(`[href="#${heading.id}"]`);
 
       sidebarLinks.forEach(link => link.classList.remove("active"));
       currentLink.classList.add("active");
+    }
+
+    if (windowPosition < headings[0].offsetTop) {
+      sidebarLinks.forEach(link => link.classList.remove("active"));
     }
   });
 };

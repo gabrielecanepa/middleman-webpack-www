@@ -1,8 +1,8 @@
 {
-  "name": "middleman-webpack",
+  "name": "middleman-webpack-www",
   "version": "1.0",
-  "description": "🏗 Scalable ready-to-use Middleman 4 template",
-  "repository": "https://github.com/gabrielecanepa/middleman-webpack",
+  "description": "Code for https://gabrielecanepa.github.io/middleman-webpack",
+  "repository": "https://github.com/gabrielecanepa/middleman-webpack-www",
   "author": "Gabriele Canepa <gabriele@canepa.io>",
   "license": "MIT",
   "devDependencies": {
@@ -23,14 +23,15 @@
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.0"
   },
-  "scripts": {
-    "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --bail -p",
-    "start": "NODE_ENV=development ./node_modules/webpack/bin/webpack.js --watch -d --color"
-  },
   "dependencies": {
     "bootstrap": "^4.1.3",
+    "js-yaml": "^3.12.1",
     "tippy.js": "^3.1.1",
     "typed.js": "^2.0.9",
     "zooming": "^2.1.0"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --bail -p",
+    "start": "NODE_ENV=development ./node_modules/webpack/bin/webpack.js --watch -d --color"
   }
 }

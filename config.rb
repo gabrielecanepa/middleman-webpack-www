@@ -53,7 +53,6 @@ activate :external_pipeline,
          source: 'dist',
          latency: 1
 
-activate :dotenv
 activate :meta_tags
 activate :syntax, css_class: 'highlight-syntax'
 

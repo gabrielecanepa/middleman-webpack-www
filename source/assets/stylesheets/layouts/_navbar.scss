@@ -8,6 +8,7 @@
   padding: 0.6rem 0 0.6rem 1rem;
   background-color: $yellow;
   font-weight: 500;
+
   .navbar-link {
     color: $black;
     padding: 0.6rem 0;
@@ -20,8 +21,10 @@
   .navbar-right {
     flex-wrap: nowrap;
     display: flex;
+
     .navbar-link {
       margin-left: 1rem;
+      
       &:last-child { margin-right: 1rem }
     }
   }

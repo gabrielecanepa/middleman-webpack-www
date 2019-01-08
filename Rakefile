@@ -1,4 +1,4 @@
-require 'ruby-progressbar'
+require 'rainbow'
 
 linters = [
   {
@@ -21,30 +21,22 @@ linters = [
 default_tasks = []
 
 linters.each do |linter|
-  desc "Check your #{linter[:language]} style with #{linter[:name]}"
-  task linter[:name].to_sym do
-    show_linter_progress_bar(linter[:language], linter[:name])
+  desc "Check your #{linter[:language]} files with #{linter[:name]}"
+  task linter[:name].downcase.to_sym do
+    puts Rainbow(
+      "Checking your #{linter[:language]} files with #{linter[:name]}..."
+    ).bright.orange
     run_linter(linter[:command])
   end
-  default_tasks << linter[:name].to_sym
+  default_tasks << linter[:name].downcase.to_sym
 end
 
 task default: default_tasks
 
-def show_linter_progress_bar(language, linter)
-  title = "Checking your #{language} style with #{linter}"
-  bar = ProgressBar.create(title: title, progress_mark: '.', format: '%t%B')
-  3.times do
-    bar.increment
-    sleep 0.4
-  end
-  puts title + '...'
-end
-
 def run_linter(command)
   output = `#{command}`
   if output.empty?
-    puts "\n\e[32;1m✔︎ Perfect style!\e[0m\n\n"
+    puts Rainbow('✔︎ Perfect style!').bright.green
   else
     system command
   end

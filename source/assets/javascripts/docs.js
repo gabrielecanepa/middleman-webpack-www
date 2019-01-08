@@ -36,6 +36,7 @@ document.querySelectorAll(".about img[src*=\"screen\"]").forEach((img) => {
       scaleExtra: 1,
       transitionDuration: 0.2
     });
+
     zoomImage.listen(img);
   } else {
     const imgLink = document.createElement("a");

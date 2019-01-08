@@ -11,7 +11,7 @@
 		stroke-linejoin: round;
 		stroke-miterlimit: 10;
 	}
-  #mouth-2 { display:none }
+  #avatar-mouth-2 { display:none }
 </style>
 <g>
 	<path class="st0" d="M221.5,155.2H213v51.1h8.5c14.1,0,25.5-11.4,25.5-25.6S235.6,155.2,221.5,155.2L221.5,155.2z"/>
@@ -50,6 +50,7 @@
 <script>
   const mouth1 = document.getElementById("avatar-mouth-1");
   const mouth2 = document.getElementById("avatar-mouth-2");
+	
 	const showSmile = () => {
 		mouth1.style.display = "none";
 		mouth2.style.display = "block";
@@ -61,7 +62,7 @@
 
 	window.addEventListener("scroll", () => {
 		showSmile();
-		setTimeout(showNormal, 500);
+		setTimeout(showNormal, 1000);
 	});
 </script>
 </svg>
