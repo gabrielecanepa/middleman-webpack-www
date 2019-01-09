@@ -4,6 +4,7 @@ module.exports = {
   mode: "development",
   entry: {
     main: "./source/assets/javascripts/main.js",
+    home: "./source/assets/javascripts/home.js",
     docs: "./source/assets/javascripts/docs.js"
   },
   output: {
