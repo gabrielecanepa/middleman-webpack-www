@@ -1,5 +1,4 @@
-import "./components/tippy";
-import typeText from "./components/typed";
+import typeText from "./components/typer";
 
 // Browser type effect
 const browserTypeOptions = {

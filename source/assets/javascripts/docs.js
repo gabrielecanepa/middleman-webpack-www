@@ -1,8 +1,5 @@
 import { buildSidebarMenu, highlightSidebar } from "./components/sidebar";
-import zoom from "./components/zoom";
-
-// Allow :active styles
-document.addEventListener("touchstart", () => {}, true);
+import zoomer from "./components/zoomer";
 
 // Build sidebar and highlight current section title
 const sidebar = document.querySelector(".sidebar");
@@ -15,24 +12,15 @@ window.addEventListener("scroll", () => {
 });
 
 // Don't decorate links around code
-document.querySelectorAll("a code").forEach((code) => {
-  const link = code.parentElement;
-
-  link.style.textDecoration = "none";
+document.querySelectorAll("a code").forEach((codeBlock) => {
+  const linkStyle = codeBlock.parentElement.style;
+  linkStyle.textDecoration = "none";
 });
 
-// Remove margin and line-height from paragraphs around screen pictures
-document.querySelectorAll(".docs img[src*=\"screen\"]").forEach((img) => {
-  const paragraphStyle = img.parentElement.style;
-
-  paragraphStyle.margin = 0;
-  paragraphStyle.lineHeight = 0;
-});
-
-// Zoom screen pictures (open image source on mobile)
+// Zoom screen pictures (open on mobile) and adjust paragraph style
 document.querySelectorAll(".docs img[src*=\"screen\"]").forEach((img) => {
   if (window.innerWidth > 576) {
-    const zoomImage = zoom({
+    const zoomImage = zoomer({
       scaleExtra: 1,
       transitionDuration: 0.3
     });
@@ -40,17 +28,14 @@ document.querySelectorAll(".docs img[src*=\"screen\"]").forEach((img) => {
     zoomImage.listen(img);
   } else {
     const imgLink = document.createElement("a");
+
     imgLink.innerHTML = img.outerHTML;
     imgLink.setAttribute("href", img.src);
-
     img.parentNode.insertBefore(imgLink, img);
     img.remove();
   }
-});
 
-// Open links in a new tab, except for the local ones
-document.querySelectorAll(".docs a").forEach((a) => {
-  if (!a.href.includes(window.location.hostname)) {
-    a.setAttribute("target", "_blank");
-  }
+  const paragraphStyle = img.parentElement.style;
+  paragraphStyle.margin = 0;
+  paragraphStyle.lineHeight = 0;
 });

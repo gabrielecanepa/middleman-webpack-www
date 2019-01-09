@@ -1,20 +1,20 @@
-// Remove file extension from urls in production
-if (process.env.NODE_ENV === "production") {
-  document.querySelectorAll("a").forEach((link) => {
-    let linkHref = link.href;
-
-    if (linkHref.includes(".html")) {
-      linkHref = linkHref.replace(".html", "");
-    }
-  });
-}
-
-// Open local links in current tab
-document.querySelectorAll("a").forEach((link) => {
-  if (link.href.includes(window.location.hostname)) {
-    link.removeAttribute("target");
-  }
-});
+import "./components/tooltip";
+import "./components/avatar";
 
 // Allow :active styles
 document.addEventListener("touchstart", () => {}, true);
+
+// Open local links in current tab and remove file extension from urls
+const allLinks = document.querySelectorAll("a");
+const hostName = window.location.hostname;
+
+if (!hostName.includes("localhost")) { // production
+  allLinks.forEach((link) => {
+    if (link.href.includes(hostName)) { // local urls
+      link.removeAttribute("target");
+      link.setAttribute("href", link.href.replace(".html", ""));
+    } else {
+      link.setAttribute("target", "_blank"); // needed for docs
+    }
+  });
+}
