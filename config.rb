@@ -4,7 +4,7 @@
 Dir['./*/*.rb'].each { |file| load file }
 include FaviconsHelper
 
-::Sass.load_paths << File.join(root, 'node_modules')
+config[:sass_assets_paths] << File.join(root, 'node_modules')
 
 set :css_dir,    'assets/stylesheets'
 set :fonts_dir,  'assets/fonts'
