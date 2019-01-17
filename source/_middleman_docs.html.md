@@ -205,7 +205,7 @@ Your website setting must be imported first and contain the variables, mixins an
 
 #### 2. Vendors
 
-External stylesheets must be imported right after your website settings, and before any eventual setting overriding the default vendor configuration.
+Import external stylesheets right after your website settings, and before any eventual setting overriding the default library configuration.
 
 Any stylesheet added with Yarn can be imported into your stylesheet files with an `@import` statement followed by the path relative to the `node_modules` folder.
 
