@@ -85,6 +85,7 @@ end
 
 activate :deploy do |deploy|
   deploy.deploy_method = :git
+  deploy.remote        = 'git@github.com:gabrielecanepa/middleman-webpack.git'
   deploy.branch        = 'gh-pages'
   deploy.build_before  = true
 end
