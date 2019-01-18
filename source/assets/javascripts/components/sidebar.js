@@ -2,7 +2,7 @@ const buildSidebarMenu = (sidebar, headings) => {
   headings.forEach((heading) => {
     let sidebarLink;
 
-    if (heading.tagName === "H1") {
+    if (heading.tagName === 'H1') {
       sidebarLink = `
         <a class="sidebar-title" href="#${heading.id}">
           <div class="logo-container">
@@ -11,7 +11,7 @@ const buildSidebarMenu = (sidebar, headings) => {
           <code>1.0.0-alpha</code>
         </a>
       `;
-    } else if (heading.tagName === "H2") {
+    } else if (heading.tagName === 'H2') {
       sidebarLink = `
         <h4>
           <a href="#${heading.id}">
@@ -29,7 +29,7 @@ const buildSidebarMenu = (sidebar, headings) => {
       `;
     }
 
-    sidebar.insertAdjacentHTML("beforeend", sidebarLink);
+    sidebar.insertAdjacentHTML('beforeend', sidebarLink);
   });
 };
 
@@ -37,7 +37,7 @@ const highlightSidebar = (sidebar, headings) => {
   const windowPosition = window.scrollY;
 
   headings.forEach((heading, index) => {
-    const sidebarLinks = sidebar.querySelectorAll("a");
+    const sidebarLinks = sidebar.querySelectorAll('a');
     const headingPosition = heading.offsetTop;
     let nextHeadingPosition;
 
@@ -50,12 +50,12 @@ const highlightSidebar = (sidebar, headings) => {
     if (windowPosition > headingPosition && windowPosition < nextHeadingPosition) {
       const currentLink = sidebar.querySelector(`[href="#${heading.id}"]`);
 
-      sidebarLinks.forEach(link => link.classList.remove("active"));
-      currentLink.classList.add("active");
+      sidebarLinks.forEach(link => link.classList.remove('active'));
+      currentLink.classList.add('active');
     }
 
     if (windowPosition < headings[0].offsetTop) {
-      sidebarLinks.forEach(link => link.classList.remove("active"));
+      sidebarLinks.forEach(link => link.classList.remove('active'));
     }
   });
 };

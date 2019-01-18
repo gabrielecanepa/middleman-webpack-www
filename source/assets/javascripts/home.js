@@ -1,8 +1,8 @@
-import typeText from "./components/typer";
+import type from './components/type';
 
 // Browser type effect
 const browserTypeOptions = {
-  strings: ["middleman init -T gabrielecanepa/middleman-webpack"],
+  strings: ['middleman init -T gabrielecanepa/middleman-webpack'],
   typeSpeed: 40
 };
-typeText(".browser-code .content", browserTypeOptions);
+type('.browser-code .content', browserTypeOptions);

@@ -1,36 +1,36 @@
-import { buildSidebarMenu, highlightSidebar } from "./components/sidebar";
-import zoomer from "./components/zoomer";
+import { buildSidebarMenu, highlightSidebar } from './components/sidebar';
+import zoom from './components/zoom';
 
 // Build sidebar and highlight current section title
-const sidebar = document.querySelector(".sidebar");
-const sidebarHeadings = document.querySelectorAll("h1, h2, h3");
+const sidebar = document.querySelector('.sidebar');
+const sidebarHeadings = document.querySelectorAll('h1, h2, h3');
 
 buildSidebarMenu(sidebar, sidebarHeadings);
 
-window.addEventListener("scroll", () => {
+window.addEventListener('scroll', () => {
   highlightSidebar(sidebar, sidebarHeadings);
 });
 
 // Don't decorate links around code
-document.querySelectorAll("a code").forEach((codeBlock) => {
+document.querySelectorAll('a code').forEach((codeBlock) => {
   const linkStyle = codeBlock.parentElement.style;
-  linkStyle.textDecoration = "none";
+  linkStyle.textDecoration = 'none';
 });
 
-// Zoom screen pictures (open on mobile) and adjust paragraph style
-document.querySelectorAll(".docs img[src*=\"screen\"]").forEach((img) => {
+// Zoom screen pictures (open path on mobile) and adjust paragraph style
+document.querySelectorAll('.docs img[src*="screen"]').forEach((img) => {
   if (window.innerWidth > 576) {
-    const zoomImage = zoomer({
+    const zoomImage = zoom({
       scaleExtra: 1,
       transitionDuration: 0.3
     });
 
     zoomImage.listen(img);
   } else {
-    const imgLink = document.createElement("a");
+    const imgLink = document.createElement('a');
 
     imgLink.innerHTML = img.outerHTML;
-    imgLink.setAttribute("href", img.src);
+    imgLink.setAttribute('href', img.src);
     img.parentNode.insertBefore(imgLink, img);
     img.remove();
   }
