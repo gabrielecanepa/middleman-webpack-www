@@ -17,23 +17,13 @@ document.querySelectorAll('a code').forEach((codeBlock) => {
   linkStyle.textDecoration = 'none';
 });
 
-// Zoom screen pictures (open path on mobile) and adjust paragraph style
+// Zoom screen pictures and adjust paragraph style
 document.querySelectorAll('.docs img[src*="screen"]').forEach((img) => {
-  if (window.innerWidth > 576) {
-    const zoomImage = zoom({
-      scaleExtra: 1,
-      transitionDuration: 0.3
-    });
-
-    zoomImage.listen(img);
-  } else {
-    const imgLink = document.createElement('a');
-
-    imgLink.innerHTML = img.outerHTML;
-    imgLink.setAttribute('href', img.src);
-    img.parentNode.insertBefore(imgLink, img);
-    img.remove();
-  }
+  const zoomImage = zoom({
+    scaleExtra: 1,
+    transitionDuration: 0.3
+  });
+  zoomImage.listen(img);
 
   const paragraphStyle = img.parentElement.style;
   paragraphStyle.margin = 0;
