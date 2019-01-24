@@ -1,3 +1,5 @@
+const packageJSON = require('../../../../package.json');
+
 const buildSidebarMenu = (sidebar, headings) => {
   headings.forEach((heading) => {
     let sidebarLink;
@@ -8,7 +10,7 @@ const buildSidebarMenu = (sidebar, headings) => {
           <div class="logo-container">
             <img src="assets/images/logo.svg" class="logo">
           </div>
-          <code>1.0.0-alpha</code>
+          <code>${packageJSON.version}</code>
         </a>
       `;
     } else if (heading.tagName === 'H2') {
