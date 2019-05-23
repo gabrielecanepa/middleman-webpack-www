@@ -1,16 +1,7 @@
-$icomoon-font-family:       "icomoon" !default;
-$icomoon-font-path:         "/assets/fonts" !default;
-$icomoon-github:            "\e900";
-$icomoon-middleman:         "\e901";
-$icomoon-json:              "\e902";
-$icomoon-javascript:        "\e903";
-$icomoon-git:               "\e904";
-$icomoon-html:              "\e905";
-$icomoon-css:               "\e906";
-$icomoon-ruby:              "\e907";
-$icomoon-yaml:              "\e908";
-$icomoon-bash:              "\e909";
-$icomoon-webpack:           "\e910";
+$icomoon-font-family: "icomoon" !default;
+$icomoon-font-path:   "/assets/fonts" !default;
+$icomoon-github:      "\e900";
+$icomoon-middleman:   "\e901";
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
@@ -22,6 +13,7 @@ $icomoon-webpack:           "\e910";
   font-weight: normal;
   font-style: normal;
 }
+
 i {
   font-family: '#{$icomoon-font-family}' !important;
   speak: none;
@@ -31,67 +23,13 @@ i {
   text-transform: none;
   line-height: 1;
 }
-.icomoon-bash {
-  &::before {
-    content: $icomoon-bash;
-  }
-}
-.icomoon-css {
-  &::before {
-    content: $icomoon-css;
-    color: #1572B6;
-  }
-}
-.icomoon-git {
-  &::before {
-    content: $icomoon-git;
-    color: #F05032;
-  }
-}
 .icomoon-github {
   &::before {
     content: $icomoon-github;
   }
 }
-.icomoon-html {
-  &::before {
-    content: $icomoon-html;
-    color: #E34F26;
-  }
-}
-.icomoon-javascript {
-  &::before {
-    content: $icomoon-javascript;
-    color: #F7DF1E;
-  }
-}
-.icomoon-json {
-  &::before {
-    content: $icomoon-json;
-    color: #A0A0A0;
-  }
-}
 .icomoon-middleman {
   &::before {
     content: $icomoon-middleman;
-  }
-}
-.icomoon-ruby {
-  &::before {
-    content: $icomoon-ruby;
-    color: #CC342D;
-  }
-}
-.icomoon-webpack {
-  &::before {
-    content: $icomoon-webpack;
-  }
-}
-.icomoon-yaml {
-  &::before {
-    content: $icomoon-yaml;
-    font-size: 0.6em;
-    color: $red;
-    bottom: 2px;
   }
 }
