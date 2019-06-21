@@ -1,3 +1,3 @@
-# Middleman webpack
+# middleman-webpack-www
 
-🏗 Scalable ready-to-use Middleman 4 template
+Code for [Middleman webpack website](https://gabrielecanepa.github.io/middleman-webpack), based on [middleman-webpack](https://github.com/gabrielecanepa/middleman-webpack).
