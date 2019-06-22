@@ -10,14 +10,19 @@
 @import "bootstrap/scss/bootstrap-grid";
 
 // Style
-@import "site";
+// 1. Base
+@import "base/site";
+@import "base/typography";
+@import "base/elements";
+// 2. Components
 @import "components/buttons";
 @import "components/code";
 @import "components/hero";
 @import "components/language-card";
 @import "components/section-tools";
 @import "components/tooltip";
+// 3. Layouts
 @import "layouts/footer";
 @import "layouts/navbar";
+// 4. Pages
 @import "pages/about";
-

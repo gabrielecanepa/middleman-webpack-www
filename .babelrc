@@ -1,10 +1,1 @@
-{
-  "presets": ["@babel/preset-env"],
-  "plugins": [
-    ["prismjs", {
-        "languages": ["bash", "css", "erb", "git", "javascript", "json", "ruby", "yaml"],
-        "plugins": ["copy-to-clipboard", "toolbar"],
-        "css": true
-    }]
-  ]
-}
+{ "presets": ["@babel/preset-env"] }

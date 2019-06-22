@@ -1,43 +1,9 @@
 code, pre {
   font-family: $font-family-monospace;
   font-size: 1em;
-}
-code[class*="language-"],
-pre[class*="language-"] {
-  color: $black;
-  background: $white-dark;
-  text-align: left;
-  hyphens: none;
-}
-pre[class*="language-"] {
   position: relative;
-  overflow: visible;
-  white-space: normal;
-  padding: 1em 1.5em 2em;
-  margin: 1.5em 0 1.6em;
-  border-radius: 0.3em;
-  > code {
-    position: relative;
-    white-space: pre-line;
-  }
-}
-code[class*="language"] {
-  padding: 0 1em;
-  display: block;
-  overflow: auto;
-}
-code.language-bash {
-  display: inline-block;
-  &::before {
-    content: "$";
-    position: absolute;
-    top: 1.3em;
-    left: 0;
-    color: $gray;
-  }
 }
 :not(pre) > code[class*="language-"] {
-  position: relative;
   padding: .2em;
   border-radius: 0.3em;
   color: $red;
@@ -47,92 +13,82 @@ code.language-bash {
 :not(pre) > code:focus {
   outline: none;
 }
-.token.comment,
-.token.block-comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: $gray;
-}
-.token.punctuation {
-  color: $gray-dark;
-}
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.function-name,
-.token.constant,
-.token.symbol,
-.token.deleted {
-  color: $red;
-}
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.function,
-.token.builtin,
-.token.inserted {
-  color: $green;
-}
-.token.operator,
-.token.entity,
-.token.url,
-.token.variable {
-  color: $sand;
-}
-.token.atrule,
-.token.attr-value,
-.token.keyword,
-.token.class-name {
-  color: $blue;
-}
-.token.regex,
-.token.important {
-  color: $yellow;
-}
-.language-css .token.string,
-.style .token.string {
-  color: $sand;
-}
-.token.important {
-  font-weight: normal;
-}
-.token.bold {
-  font-weight: bold;
-}
-.token.italic {
-  font-style: italic;
-}
-.token.entity {
-  cursor: help;
-}
-.namespace {
-  opacity: .7;
-}
-.token.tab:not(:empty)::before,
-.token.cr::before,
-.token.lf::before {
-  color: $white-dark;
-}
-// Override default button style
-.code-toolbar .toolbar {
-  top: .8em !important;
-  right: .7em !important;
-  a { border-left: none !important; }
-  a, button, span {
-    color: $gray-dark !important;
-    font-size: .8em !important;
-    padding: 1em !important;
-    background: $white !important;
-    border: 1px solid rgba(0, 0, 0, 0.1) !important;
-    box-shadow: none !important;
-    border-radius: 1px !important;
-    font-weight: 600 !important;
-    &:focus { outline: none; }
-  }
-  .toolbar-item:first-child button {
-    border-right-width: 0 !important;
-  }
+
+.highlight-syntax {
+  color: $black;
+  background: $white-dark;
+  text-align: left;
+  overflow: visible;
+  padding: 1.5em 2em;
+  margin: 1.5em 0;
+  border-radius: 0.3em;
+
+  .c   { color: $gray } // Comment
+  .err { color: $gray-dark } // Error
+  .g   { color: $gray-dark } // Generic
+  .k   { color: $green-darker } // Keyword
+  .l   { color: $gray-dark } // Literal
+  .n   { color: $gray-dark } // Name
+  .o   { color: $green-darker } // Operator
+  .x   { color: $orange } // Other
+  .p   { color: $gray-dark } // Punctuation
+  .cm  { color: $gray } // Comment multiline
+  .cp  { color: $green-darker } // Comment preproc
+  .c1  { color: $green; } // Comment single
+  .cs  { color: $green-darker } // Comment special
+  .gd  { color: $blue-light } // Generic deleted
+  .ge  { color: $gray-dark; font-style: italic } // Generic emphasis
+  .gr  { color: $red } // Generic error
+  .gh  { color: $orange } // Generic heading
+  .gi  { color: $green-darker } // Generic inserted
+  .go  { color: $gray-dark } // Generic output
+  .gp  { color: $gray-dark } // Generic prompt
+  .gs  { color: $gray-dark; font-weight: bold } // Generic strong
+  .gu  { color: $orange } // Generic subheading
+  .gt  { color: $gray-dark } // Generic traceback
+  .kc  { color: $orange } // Keyword constant
+  .kd  { color: $blue } // Keyword declaration
+  .kn  { color: $green-darker } // Keyword namespace
+  .kp  { color: $green-darker } // Keyword pseudo
+  .kr  { color: $blue } // Keyword reserved
+  .kt  { color: $red } // Keyword type
+  .ld  { color: $gray-dark } // Literal date
+  .m   { color: $blue-light } // Literal number
+  .s   { color: $blue-light } // Literal string
+  .na  { color: $gray-dark } // Name attribute
+  .nb  { color: $gold } // Name built-in
+  .nc  { color: $blue } // Name class
+  .no  { color: $orange } // Name constant
+  .nd  { color: $blue } // Name decorator
+  .ni  { color: $orange } // Name entity
+  .ne  { color: $orange } // Name exception
+  .nf  { color: $blue } // Name function
+  .nl  { color: $gray-dark } // Name label
+  .nn  { color: $gray-dark } // Name namespace
+  .nx  { color: $gray-dark } // Name other
+  .py  { color: $gray-dark } // Name property
+  .nt  { color: $blue } // Name tag
+  .nv  { color: $blue } // Name variable
+  .ow  { color: $green-darker } // Operator word
+  .w   { color: $gray-dark } // Text whitespace
+  .mf  { color: $blue-light } // Literal number (float)
+  .mh  { color: $blue-light } // Literal number (hex)
+  .mi  { color: $blue-light } // Literal number (integer)
+  .mo  { color: $blue-light } // Literal number (oct)
+  .sb  { color: $gray } // Literal string backtick
+  .sc  { color: $blue-light } // Literal string character
+  .sd  { color: $gray-dark } // Literal string doc
+  .s2  { color: $blue-light } // Literal string double
+  .se  { color: $orange } // Literal string escape
+  .sh  { color: $gray-dark } // Literal string heredoc
+  .si  { color: $blue-light } // Literal string interpololation
+  .sx  { color: $blue-light } // Literal.String.Other
+  .sr  { color: $red } // Literal string regex
+  .s1  { color: $blue-light } // Literal string single
+  .ss  { color: $blue-light } // Literal string symbol
+  .bp  { color: $blue } // Name built-in pseudo
+  .vc  { color: $blue } // Name variable class
+  .vg  { color: $blue } // Name variable global
+  .vi  { color: $blue } // Name variable instance
+  .il  { color: $blue-light } // Literal number (long integer)
 }
