@@ -77,7 +77,7 @@ alias middleman:webpack="middleman init $1 gabrielecanepa/middleman-webpack"
 
 and use it to quickly initialize a new project:
 
-![](screen1.png)
+![](https://github.com/gabrielecanepa/assets/raw/master/middleman-webpack/screen1.png?sanitize=true)
 
 ## Usage
 
@@ -97,11 +97,11 @@ The properties you set up here will be used by the `auto_display_meta_tag` helpe
 
 The default configuration
 
-![](screen1.png)
+![](https://github.com/gabrielecanepa/assets/raw/master/middleman-webpack/screen1.png?sanitize=true)
 
 produces the following tags for the homepage:
 
-![](screen1.png)
+![](https://github.com/gabrielecanepa/assets/raw/master/middleman-webpack/screen1.png?sanitize=true)
 
 Any tag can be overwritten (or created) in each page or layout with [frontmatter](https://middlemanapp.com/basics/frontmatter) (see [`source/404.html.erb`](https://github.com/gabrielecanepa/middleman-webpack/tree/master/template/source/404.html.erb)) or the `set_meta_tag` helper (see [`source/index.html.erb`](https://github.com/gabrielecanepa/middleman-webpack/tree/master/template/source/index.html.erb)).
 
@@ -145,7 +145,7 @@ set :favicons, [
 
 generate the following tags and relative icons:
 
-![](screen1.png)
+![](https://github.com/gabrielecanepa/assets/raw/master/middleman-webpack/screen1.png?sanitize=true)
 
 ### Styling
 
@@ -207,11 +207,10 @@ An example of this organization can be found in the [documentation website](http
 // Settings
 @import "settings/colors";
 @import "settings/fonts";
-@import "settings/variables";
 
 // Vendors
-@import "bootstrap/scss/mixins/breakpoints";
 @import "bootstrap/scss/bootstrap-grid";
+@import "bootstrap/scss/utilities/spacing";
 @import "vendors-settings/bootstrap";
 @import "vendors-settings/icomoon";
 
@@ -223,13 +222,14 @@ An example of this organization can be found in the [documentation website](http
 // 2. Components
 @import "components/buttons";
 @import "components/hero";
-@import "components/section-tools";
 @import "components/language-card";
+@import "components/section-tools";
 @import "components/tooltip";
 @import "components/code";
 // 3. Layouts
 @import "layouts/navbar";
 @import "layouts/footer";
+@import "layouts/sidebar";
 // 4. Pages
 @import "pages/about";
 ```
