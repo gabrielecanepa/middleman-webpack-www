@@ -349,7 +349,3 @@ A 404 page is already provided for you. Use it to display a custom design when v
 3.  Commit your changes (`git commit -m "Add some feature"`)
 4.  Push to the branch (`git push origin my-new-feature`)
 5.  Create a new pull request
-
-<!-- ## License
-
-[![](https://github.com/gabrielecanepa/assets/raw/master/badges/mit.svg?sanitize=true)](https://gabriele.canepa.io/mit) -->
