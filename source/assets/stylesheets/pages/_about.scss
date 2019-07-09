@@ -59,6 +59,7 @@
     color: rgba($gray-dark, 0.7);
     padding: 0 1em;
     margin-inline-start: 0;
+    margin-inline-end: 0;
   }
   strong {
     font-weight: 600;
@@ -86,7 +87,13 @@
 }
 
 @include media-breakpoint-down(sm) {
-  .about { padding: 1em 1.5em 1.5em }
+  .about {
+    padding: 1em 1.5em 1.5em;
+
+    h1 {
+      font-size: 2em;
+    } 
+  }
 }
 @include media-breakpoint-down(lg) {
   .about img[src*="screen"] { padding: 0 }
