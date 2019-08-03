@@ -22,7 +22,7 @@ document.querySelectorAll("a code").forEach((code) => {
 });
 
 // Remove margin and line-height from paragraphs around screen pictures
-document.querySelectorAll(".about img[src*=\"screen\"]").forEach((img) => {
+document.querySelectorAll(".docs img[src*=\"screen\"]").forEach((img) => {
   const paragraphStyle = img.parentElement.style;
 
   paragraphStyle.margin = 0;
@@ -30,7 +30,7 @@ document.querySelectorAll(".about img[src*=\"screen\"]").forEach((img) => {
 });
 
 // Zoom screen pictures (open image source on mobile)
-document.querySelectorAll(".about img[src*=\"screen\"]").forEach((img) => {
+document.querySelectorAll(".docs img[src*=\"screen\"]").forEach((img) => {
   if (window.innerWidth > 576) {
     const zoomImage = zoom({
       scaleExtra: 1,
@@ -49,7 +49,7 @@ document.querySelectorAll(".about img[src*=\"screen\"]").forEach((img) => {
 });
 
 // Open links in a new tab, except for the local ones
-document.querySelectorAll(".about a").forEach((a) => {
+document.querySelectorAll(".docs a").forEach((a) => {
   if (!a.href.includes(window.location.hostname)) {
     a.setAttribute("target", "_blank");
   }

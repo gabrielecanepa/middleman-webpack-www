@@ -71,13 +71,13 @@ stylelint:
   description: <strong>Avoid errors in your styles</strong> with this mighty, modern linter
 
 Favicon helper:
-  website: about#favicon
+  website: documentation#favicon
   description: <strong>Display your favicon in every environment</strong> with a simple line of code
 
 Inline SVGs:
-  website: about#images
+  website: documentation#images
   description: <strong>Embed SVG icons in your views</strong> and manipulate them with SCSS and JavaScript
 
 404 page:
-  website: about#404-page
+  website: documentation#404-page
   description: <strong>Show a custom page</strong> when visitors attempts to access pages that don’t exist

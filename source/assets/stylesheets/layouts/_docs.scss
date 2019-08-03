@@ -1,4 +1,4 @@
-.about {
+.docs {
   padding: 2em 3em;
 
   h1, h2, h3 {
@@ -87,7 +87,7 @@
 }
 
 @include media-breakpoint-down(sm) {
-  .about {
+  .docs {
     padding: 1em 1.5em 1.5em;
 
     h1 {
@@ -96,5 +96,5 @@
   }
 }
 @include media-breakpoint-down(lg) {
-  .about img[src*="screen"] { padding: 0 }
+  .docs img[src*="screen"] { padding: 0 }
 }

@@ -1,4 +1,4 @@
-.section-home {
+section.home {
   padding: 1em 0;
   text-align: center;
 
@@ -8,7 +8,7 @@
   .tool {
     margin: 2em 0;
   }
-  .section-home-buttons {
+  .home-buttons {
     margin: 1em;
   }
   .btn {
@@ -18,8 +18,8 @@
 }
 
 @include media-breakpoint-down(sm) {
-  .section-home {
-    .section-home-secondary { display: none }
-    .section-home-buttons { margin-top: 2em }
+  section.home {
+    .home-secondary { display: none }
+    .home-buttons { margin-top: 2em }
   }
 }
