@@ -71,7 +71,7 @@ stylelint:
   description: <strong>Avoid errors in your styles</strong> with this mighty, modern linter
 
 Favicon helper:
-  website: about#favicons
+  website: about#favicon
   description: <strong>Display your favicon in every environment</strong> with a simple line of code
 
 Inline SVGs:
