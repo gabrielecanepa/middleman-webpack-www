@@ -34,7 +34,7 @@ document.querySelectorAll(".about img[src*=\"screen\"]").forEach((img) => {
   if (window.innerWidth > 576) {
     const zoomImage = zoom({
       scaleExtra: 1,
-      transitionDuration: 0.2
+      transitionDuration: 0.3
     });
 
     zoomImage.listen(img);
