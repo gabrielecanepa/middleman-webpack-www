@@ -3,7 +3,7 @@
   "version": "1.0.0-alpha",
   "description": "Code for https://gabrielecanepa.github.io/middleman-webpack",
   "repository": "gabrielecanepa/middleman-webpack-www",
-  "author": "Gabriele Canepa <gabriele@canepa.io>",
+  "author": "Gabriele Canepa <contact@gabrielecanepa.com>",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.1.5",
